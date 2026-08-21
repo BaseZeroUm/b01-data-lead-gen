@@ -1,11 +1,11 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import logoAsset from "@/assets/logo.png.asset.json";
 import block64 from "@/assets/Group_64.png.asset.json";
 import block65 from "@/assets/Group_65.png.asset.json";
-import portalAsset from "@/assets/portal-b01.png.asset.json";
 import felipePortrait from "@/assets/felipe-garcez-crop.jpg";
-import { PILLARS, ABOUT_PILLS } from "@/lib/landing-content";
+import { PILLARS, ABOUT_PILLS, PORTAL_TABS } from "@/lib/landing-content";
 import { LeadForm } from "@/components/LeadForm";
 
 const TITLE = "B01, consultoria de dados para PME, decida além do achismo";
@@ -45,6 +45,8 @@ export const Route = createFileRoute("/")({
 
 function Landing() {
   const year = new Date().getFullYear();
+  const [activeTab, setActiveTab] = useState(PORTAL_TABS[0].id);
+  const currentTab = PORTAL_TABS.find((t) => t.id === activeTab) ?? PORTAL_TABS[0];
 
   return (
     <div className="min-h-screen bg-paper font-sans">
