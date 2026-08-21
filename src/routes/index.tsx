@@ -45,8 +45,8 @@ export const Route = createFileRoute("/")({
 
 function Landing() {
   const year = new Date().getFullYear();
-  const [activeTab, setActiveTab] = useState(PORTAL_TABS[0].id);
-  const currentTab = PORTAL_TABS.find((t) => t.id === activeTab) ?? PORTAL_TABS[0];
+  const [activeTab, setActiveTab] = useState(PORTAL_TABS[0]!.id);
+  const currentTab = PORTAL_TABS.find((t) => t.id === activeTab) ?? PORTAL_TABS[0]!;
 
   return (
     <div className="min-h-screen bg-paper font-sans">
