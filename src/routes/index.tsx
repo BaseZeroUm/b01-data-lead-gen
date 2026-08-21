@@ -5,6 +5,7 @@ import logoAsset from "@/assets/logo.png.asset.json";
 import block64 from "@/assets/Group_64.png.asset.json";
 import block65 from "@/assets/Group_65.png.asset.json";
 import felipePortrait from "@/assets/felipe-garcez-crop.jpg";
+import daniloPortrait from "@/assets/danilo-crivellaro.png.asset.json";
 import { PILLARS, ABOUT_PILLS, PORTAL_TABS } from "@/lib/landing-content";
 import { LeadForm } from "@/components/LeadForm";
 
