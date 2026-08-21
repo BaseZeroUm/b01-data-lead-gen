@@ -9,7 +9,9 @@ const phoneOk = (v: string) => v.replace(/\D/g, "").length >= 10;
 const WHATSAPP_URL = "https://wa.me/5511911380734";
 
 export function LeadForm() {
+  const submitLeadFn = useServerFn(submitLead);
   const [name, setName] = useState("");
+
   const [company, setCompany] = useState("");
   const [whatsapp, setWhatsapp] = useState("");
   const [email, setEmail] = useState("");
