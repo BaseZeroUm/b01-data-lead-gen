@@ -46,16 +46,19 @@ const PILLARS = [
   {
     tag: "BI",
     title: "Business Intelligence",
+    icon: iconBI.url,
     body: "Painéis e indicadores que mostram o que está acontecendo no seu negócio agora.",
   },
   {
     tag: "Engenharia",
     title: "Engenharia de Dados",
+    icon: iconEng.url,
     body: "Seus dados organizados e conectados num só lugar, prontos para uso.",
   },
   {
     tag: "Ciência",
     title: "Ciência de Dados",
+    icon: iconSci.url,
     body: "Modelos e análises que ajudam a prever o que vem a seguir.",
   },
 ];
