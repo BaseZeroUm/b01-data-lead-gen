@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import logoAsset from "@/assets/logo.png.asset.json";
-import markAsset from "@/assets/Camada_1.png.asset.json";
 import block64 from "@/assets/Group_64.png.asset.json";
 import block65 from "@/assets/Group_65.png.asset.json";
 import portalAsset from "@/assets/portal-b01.png.asset.json";
+import felipeAsset from "@/assets/felipe-garcez.jpg.asset.json";
 import { LeadForm } from "@/components/LeadForm";
+import { LiquidBackdrop } from "@/components/LiquidBackdrop";
 
 const TITLE = "B01, consultoria de dados para PME, decida além do achismo";
 const DESCRIPTION =
