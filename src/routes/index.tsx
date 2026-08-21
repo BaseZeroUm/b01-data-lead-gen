@@ -243,7 +243,7 @@ function Landing() {
                 <img
                   src={daniloPortrait.url}
                   alt="Danilo Crivellaro, especialista em dados e advogado"
-                  className="h-full w-full object-cover object-top"
+                  className="h-full w-full object-cover object-center"
                   loading="lazy"
                 />
               </div>
