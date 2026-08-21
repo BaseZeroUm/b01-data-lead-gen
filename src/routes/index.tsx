@@ -1,24 +1,252 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+import logoAsset from "@/assets/logo.png.asset.json";
+import markAsset from "@/assets/Camada_1.png.asset.json";
+import block64 from "@/assets/Group_64.png.asset.json";
+import block65 from "@/assets/Group_65.png.asset.json";
+import portalAsset from "@/assets/portal-b01.png.asset.json";
+import { LeadForm } from "@/components/LeadForm";
+
+const TITLE = "B01, consultoria de dados para PME, decida além do achismo";
+const DESCRIPTION =
+  "Business intelligence, engenharia de dados e ciência de dados numa consultoria feita para o tamanho da sua empresa.";
+
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "B01",
+          alternateName: "BaseZeroUm",
+          slogan: "Decide Beyond",
+          description: DESCRIPTION,
+          founder: { "@type": "Person", name: "Felipe Garcez" },
+        }),
+      },
+    ],
+  }),
+  component: Landing,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+const PILLARS = [
+  {
+    tag: "BI",
+    title: "Business Intelligence",
+    body: "Painéis e indicadores que mostram o que está acontecendo no seu negócio agora.",
+  },
+  {
+    tag: "Engenharia",
+    title: "Engenharia de Dados",
+    body: "Seus dados organizados e conectados num só lugar, prontos para uso.",
+  },
+  {
+    tag: "Ciência",
+    title: "Ciência de Dados",
+    body: "Modelos e análises que ajudam a prever o que vem a seguir.",
+  },
+];
+
+const ABOUT_PILLS = [
+  "Mentor de dados e analytics",
+  "Apaixonado por histórias",
+  "Tech lead de dados",
+  "Nascido em 2000",
+  "Filho de empreendedora",
+];
+
+function Landing() {
+  const year = new Date().getFullYear();
+
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-paper font-sans">
+      <header className="sticky top-0 z-50 bg-ink/90 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
+          <img src={logoAsset.url} alt="B01 BaseZeroUm" className="h-7 w-auto" />
+          <a href="#formulario" className="btn-outline-blue">
+            Falar com a B01
+          </a>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="section-dark glow-bottom">
+        <img
+          src={block65.url}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-10 top-16 w-56 opacity-20 sm:w-80"
+        />
+        <div className="relative mx-auto max-w-6xl px-5 py-24 sm:py-32">
+          <p className="text-xs font-medium uppercase tracking-[0.18em] text-on-dark-label">
+            B01 → consultoria de dados para PME
+          </p>
+          <h1 className="mt-6 max-w-3xl text-5xl leading-[1.05] tracking-tight sm:text-7xl">
+            <span className="font-light text-on-dark-muted">Toda decisão </span>
+            <span className="font-extrabold text-on-dark">precisa de uma base.</span>
+          </h1>
+          <p className="mt-7 max-w-2xl text-lg text-on-dark-muted">
+            Unimos business intelligence, engenharia de dados e ciência de dados numa
+            consultoria feita para o tamanho da sua PME.
+          </p>
+          <a href="#formulario" className="btn-brand mt-10">
+            Quero sair do escuro ↗
+          </a>
+        </div>
+      </section>
+
+      {/* Dor */}
+      <section className="section-dark glow-bottom border-t border-white/10">
+        <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:py-28 md:grid-cols-[1.2fr_1fr] md:items-center">
+          <div>
+            <h2 className="text-3xl leading-tight sm:text-5xl">
+              <span className="font-light text-on-dark-muted">Cansado de tomar </span>
+              <span className="font-extrabold text-on-dark">decisões no escuro?</span>
+            </h2>
+            <p className="mt-6 max-w-xl text-lg text-on-dark-muted">
+              A maioria das PMEs ainda decide no achismo. Não porque quer, porque nunca
+              teve dados organizados para decidir diferente.
+            </p>
+          </div>
+          <div className="card-dark p-7">
+            <span className="pill-mint">Diagnóstico</span>
+            <p className="mt-5 text-on-dark-muted">
+              <span className="font-bold text-brand-blue">↗</span> Sem base, cada reunião
+              vira opinião contra opinião.
+            </p>
+            <p className="mt-4 text-on-dark-muted">
+              <span className="font-bold text-brand-blue">↗</span> Com base, a conversa
+              passa a ser sobre o próximo passo.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Solução */}
+      <section className="relative overflow-hidden bg-paper text-on-light">
+        <img
+          src={block64.url}
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute -left-12 bottom-8 w-48 opacity-15 sm:w-64"
+        />
+        <div className="relative mx-auto max-w-6xl px-5 py-20 sm:py-28">
+          <h2 className="text-3xl sm:text-5xl">
+            <span className="font-light">Como </span>
+            <span className="font-extrabold">fazemos?</span>
+          </h2>
+          <p className="mt-6 max-w-2xl text-lg text-on-light/70">
+            A B01 nasceu para resolver isso. Unimos business intelligence, engenharia de
+            dados e ciência de dados em uma consultoria feita pro tamanho de PME.
+          </p>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {PILLARS.map((p) => (
+              <article key={p.title} className="card-light relative p-7 pt-9">
+                <span className="pill-mint absolute -top-3 left-6">{p.tag}</span>
+                <h3 className="text-xl font-extrabold">{p.title}</h3>
+                <p className="mt-3 text-on-light/70">{p.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Prova */}
+      <section className="section-dark glow-bottom">
+        <div className="relative mx-auto max-w-6xl px-5 py-20 sm:py-28">
+          <h2 className="text-3xl sm:text-5xl">
+            <span className="font-light text-on-dark-muted">Um portal, </span>
+            <span className="font-extrabold text-on-dark">todos os seus dados.</span>
+          </h2>
+          <p className="mt-5 max-w-2xl text-lg text-on-dark-muted">
+            Faturamento, clientes e performance numa visão única, com respostas diretas
+            por chat.
+          </p>
+          <div className="mt-12 overflow-hidden rounded-[2rem] border border-white/25 shadow-[var(--shadow-portal)]">
+            <img
+              src={portalAsset.url}
+              alt="Portal B01: painel de faturamento, ticket médio e conversão com chat de dados"
+              className="w-full"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Sobre */}
+      <section className="section-dark glow-bottom border-t border-white/10">
+        <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:py-28 md:grid-cols-[0.8fr_1.2fr] md:items-center">
+          <div className="card-dark flex aspect-square items-center justify-center overflow-hidden p-10">
+            <img src={markAsset.url} alt="" aria-hidden="true" className="w-40 opacity-80" />
+          </div>
+          <div>
+            <h2 className="text-3xl sm:text-5xl">
+              <span className="font-light text-on-dark-muted">Quem </span>
+              <span className="font-extrabold text-on-dark">criou tudo isso?</span>
+            </h2>
+            <p className="mt-6 text-2xl font-extrabold text-on-dark">Felipe Garcez</p>
+            <div className="mt-5 flex flex-wrap gap-2">
+              {ABOUT_PILLS.map((pill) => (
+                <span key={pill} className="pill-mint">
+                  {pill}
+                </span>
+              ))}
+            </div>
+            <p className="mt-6 max-w-xl text-on-dark-muted">
+              Fundador da B01, criado dentro de uma empresa de família e formado dentro de
+              times de dados. Traduz números em decisão para quem precisa decidir hoje.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA + Formulário */}
+      <section id="formulario" className="bg-paper text-on-light">
+        <div className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+          <div className="grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-start">
+            <div>
+              <span className="pill-mint">Para quem é</span>
+              <p className="mt-5 text-lg text-on-light/70">
+                PMEs que já cansaram de decidir no escuro e querem crescer com base em
+                dados, não em intuição.
+              </p>
+              <p className="mt-8 text-3xl font-extrabold leading-tight text-brand-blue sm:text-4xl">
+                Chega de decidir no escuro. Mandem uma mensagem e vamos achar a base do
+                seu negócio.
+              </p>
+            </div>
+            <LeadForm />
+          </div>
+        </div>
+      </section>
+
+      <footer className="section-dark">
+        <div className="relative mx-auto flex max-w-6xl flex-col gap-6 px-5 py-12 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <img src={logoAsset.url} alt="B01 BaseZeroUm" className="h-7 w-auto" />
+            <p className="mt-3 text-sm text-on-dark-label">Decide Beyond</p>
+          </div>
+          <div className="text-sm text-on-dark-muted">
+            <a href="mailto:contato@basezeroum.com" className="text-brand-blue">
+              contato@basezeroum.com
+            </a>
+            <p className="mt-2 text-on-dark-label">© {year} B01 · BaseZeroUm</p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
