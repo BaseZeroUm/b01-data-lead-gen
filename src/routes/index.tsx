@@ -54,9 +54,10 @@ function Landing() {
       <header className="sticky top-0 z-50 bg-ink/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <img src={logoAsset.url} alt="B01 BaseZeroUm" className="h-7 w-auto" />
-          <a href="#formulario" className="btn-outline-blue">
-            Falar com a B01
-          </a>
+          <Link to="/portal" className="btn-outline-blue">
+            Portal do cliente
+          </Link>
+
         </div>
       </header>
 
