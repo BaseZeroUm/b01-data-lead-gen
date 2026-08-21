@@ -4,7 +4,7 @@ import logoAsset from "@/assets/logo.png.asset.json";
 import block64 from "@/assets/Group_64.png.asset.json";
 import block65 from "@/assets/Group_65.png.asset.json";
 import portalAsset from "@/assets/portal-b01.png.asset.json";
-import felipeAsset from "@/assets/felipe-garcez.jpg.asset.json";
+import felipePortrait from "@/assets/felipe-garcez-crop.jpg";
 import { PILLARS, ABOUT_PILLS } from "@/lib/landing-content";
 import { LeadForm } from "@/components/LeadForm";
 
@@ -87,7 +87,7 @@ function Landing() {
       {/* Dor */}
       <section className="section-dark glow-bottom border-t border-white/10">
         <div className="liquid-bg" aria-hidden="true"><span /><span /></div>
-        <div className="section-pad relative z-[1] mx-auto grid max-w-6xl gap-12 px-5 sm:gap-16 md:grid-cols-[1.2fr_1fr] md:items-center">
+        <div className="section-padding relative z-[1] mx-auto grid max-w-6xl gap-12 px-5 sm:gap-16 md:grid-cols-[1.2fr_1fr] md:items-center">
           <div>
             <h2 className="text-3xl leading-tight sm:text-5xl">
               <span className="font-light text-on-dark-muted">Cansado de tomar </span>
@@ -120,7 +120,7 @@ function Landing() {
           aria-hidden="true"
           className="pointer-events-none absolute -left-12 bottom-8 w-48 opacity-15 sm:w-64"
         />
-        <div className="section-pad relative z-[1] mx-auto max-w-6xl px-5">
+        <div className="section-padding relative z-[1] mx-auto max-w-6xl px-5">
           <h2 className="text-3xl sm:text-5xl">
             <span className="font-light">Como </span>
             <span className="font-extrabold">fazemos?</span>
@@ -160,7 +160,7 @@ function Landing() {
 
       {/* Prova */}
       <section className="section-dark glow-bottom">
-        <div className="section-pad relative z-[1] mx-auto max-w-6xl px-5">
+        <div className="section-padding relative z-[1] mx-auto max-w-6xl px-5">
           <h2 className="text-3xl sm:text-5xl">
             <span className="font-light text-on-dark-muted">Um portal, </span>
             <span className="font-extrabold text-on-dark">todos os seus dados.</span>
@@ -169,11 +169,11 @@ function Landing() {
             Faturamento, clientes e performance numa visão única, com respostas diretas
             por chat.
           </p>
-          <div className="mt-16 overflow-hidden rounded-[2rem] border border-white/25 shadow-[var(--shadow-portal)] sm:mt-20">
+          <div className="mx-auto mt-16 max-w-[1000px] overflow-hidden rounded-2xl border border-white/15 shadow-[var(--shadow-portal)] sm:mt-20">
             <img
               src={portalAsset.url}
               alt="Portal B01: painel de faturamento, ticket médio e conversão com chat de dados"
-              className="w-full"
+              className="h-auto w-full"
               loading="lazy"
             />
           </div>
@@ -183,12 +183,12 @@ function Landing() {
       {/* Sobre */}
       <section className="section-dark glow-bottom border-t border-white/10">
         <div className="liquid-bg" aria-hidden="true"><span /><span /></div>
-        <div className="section-pad relative z-[1] mx-auto grid max-w-6xl gap-12 px-5 sm:gap-16 md:grid-cols-[0.8fr_1.2fr] md:items-start">
+        <div className="section-padding relative z-[1] mx-auto grid max-w-6xl gap-12 px-5 sm:gap-16 md:grid-cols-[0.8fr_1.2fr] md:items-start">
           <div className="card-dark w-full max-w-[320px] self-start overflow-hidden rounded-[24px] [aspect-ratio:4/5]">
             <img
-              src={felipeAsset.url}
+              src={felipePortrait}
               alt="Felipe Garcez, fundador da B01"
-              className="h-full w-full object-cover [object-position:top_center]"
+              className="felipe-portrait h-full w-full object-cover object-top"
               loading="lazy"
             />
           </div>
@@ -215,7 +215,7 @@ function Landing() {
 
       {/* CTA + Formulário */}
       <section id="formulario" className="bg-paper text-on-light">
-        <div className="section-pad mx-auto max-w-6xl px-5">
+        <div className="section-padding mx-auto max-w-6xl px-5">
           <div className="grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-start">
             <div>
               <span className="pill-mint">Para quem é</span>
