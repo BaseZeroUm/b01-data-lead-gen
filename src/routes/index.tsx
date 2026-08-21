@@ -164,8 +164,24 @@ function Landing() {
           <div className="mt-16 grid gap-6 sm:mt-20 md:grid-cols-3">
             {PILLARS.map((p) => (
               <article key={p.title} className="card-light relative p-8 pt-10">
-                <span className="pill-mint absolute -top-3 left-6">{p.tag}</span>
-                <h3 className="text-xl font-extrabold">{p.title}</h3>
+                <div className="flex items-center gap-4">
+                  <span
+                    aria-hidden="true"
+                    className="block h-11 w-11 shrink-0 bg-brand-blue"
+                    style={{
+                      maskImage: `url(${p.icon})`,
+                      WebkitMaskImage: `url(${p.icon})`,
+                      maskRepeat: "no-repeat",
+                      WebkitMaskRepeat: "no-repeat",
+                      maskPosition: "center",
+                      WebkitMaskPosition: "center",
+                      maskSize: "contain",
+                      WebkitMaskSize: "contain",
+                    }}
+                  />
+                  <span className="pill-mint">{p.tag}</span>
+                </div>
+                <h3 className="mt-6 text-xl font-extrabold">{p.title}</h3>
                 <p className="mt-4 text-on-light/70">{p.body}</p>
               </article>
             ))}
