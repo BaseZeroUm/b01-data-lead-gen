@@ -169,14 +169,32 @@ function Landing() {
             Faturamento, clientes e performance numa visão única, com respostas diretas
             por chat.
           </p>
-          <div className="mx-auto mt-16 max-w-[1000px] overflow-hidden rounded-2xl border border-white/15 shadow-[var(--shadow-portal)] sm:mt-20">
+          <div className="mt-12 flex flex-wrap gap-3 sm:mt-14">
+            {PORTAL_TABS.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setActiveTab(tab.id)}
+                className={`rounded-full border px-5 py-2 text-sm font-bold transition-colors ${
+                  activeTab === tab.id
+                    ? "border-[var(--brand-blue)] bg-[var(--brand-blue)] text-[var(--ink)]"
+                    : "border-white/20 text-on-dark-label hover:border-white/40"
+                }`}
+                aria-pressed={activeTab === tab.id}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+          <div className="mx-auto mt-8 max-w-[1000px] overflow-hidden rounded-2xl border border-white/15 shadow-[var(--shadow-portal)] sm:mt-10">
             <img
-              src={portalAsset.url}
-              alt="Portal B01: painel de faturamento, ticket médio e conversão com chat de dados"
+              src={currentTab.url}
+              alt={currentTab.alt}
               className="h-auto w-full"
               loading="lazy"
             />
           </div>
+
         </div>
       </section>
 
