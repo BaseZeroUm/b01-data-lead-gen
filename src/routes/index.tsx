@@ -1,11 +1,11 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 
 import logoAsset from "@/assets/logo.png.asset.json";
 import block64 from "@/assets/Group_64.png.asset.json";
 import block65 from "@/assets/Group_65.png.asset.json";
-import portalAsset from "@/assets/portal-b01.png.asset.json";
 import felipePortrait from "@/assets/felipe-garcez-crop.jpg";
-import { PILLARS, ABOUT_PILLS } from "@/lib/landing-content";
+import { PILLARS, ABOUT_PILLS, PORTAL_TABS } from "@/lib/landing-content";
 import { LeadForm } from "@/components/LeadForm";
 
 const TITLE = "B01, consultoria de dados para PME, decida além do achismo";
@@ -45,6 +45,8 @@ export const Route = createFileRoute("/")({
 
 function Landing() {
   const year = new Date().getFullYear();
+  const [activeTab, setActiveTab] = useState(PORTAL_TABS[0]!.id);
+  const currentTab = PORTAL_TABS.find((t) => t.id === activeTab) ?? PORTAL_TABS[0]!;
 
   return (
     <div className="min-h-screen bg-paper font-sans">
@@ -169,14 +171,32 @@ function Landing() {
             Faturamento, clientes e performance numa visão única, com respostas diretas
             por chat.
           </p>
-          <div className="mx-auto mt-16 max-w-[1000px] overflow-hidden rounded-2xl border border-white/15 shadow-[var(--shadow-portal)] sm:mt-20">
+          <div className="mt-12 flex flex-wrap gap-3 sm:mt-14">
+            {PORTAL_TABS.map((tab) => (
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setActiveTab(tab.id)}
+                className={`rounded-full border px-5 py-2 text-sm font-bold transition-colors ${
+                  activeTab === tab.id
+                    ? "border-[var(--brand-blue)] bg-[var(--brand-blue)] text-[var(--ink)]"
+                    : "border-white/20 text-on-dark-label hover:border-white/40"
+                }`}
+                aria-pressed={activeTab === tab.id}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+          <div className="mx-auto mt-8 max-w-[1000px] overflow-hidden rounded-2xl border border-white/15 shadow-[var(--shadow-portal)] sm:mt-10">
             <img
-              src={portalAsset.url}
-              alt="Portal B01: painel de faturamento, ticket médio e conversão com chat de dados"
+              src={currentTab.url}
+              alt={currentTab.alt}
               className="h-auto w-full"
               loading="lazy"
             />
           </div>
+
         </div>
       </section>
 
