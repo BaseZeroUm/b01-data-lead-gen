@@ -1,5 +1,7 @@
 import { useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+import { useServerFn } from "@tanstack/react-start";
+import { submitLead } from "@/lib/leads.functions";
+
 
 const emailOk = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
 const phoneOk = (v: string) => v.replace(/\D/g, "").length >= 10;
