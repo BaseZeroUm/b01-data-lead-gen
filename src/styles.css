@@ -257,48 +257,50 @@
   padding-top: 4rem;
   padding-bottom: 4rem;
   @media (min-width: 640px) {
-    padding-top: 7.5rem;
-    padding-bottom: 7.5rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
   }
 }
 
-@utility liquid-blob {
+.liquid-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+.liquid-bg span {
   position: absolute;
   border-radius: 50%;
   filter: blur(100px);
-  pointer-events: none;
-  will-change: transform;
+  opacity: 0.2;
 }
-
-@keyframes liquid-drift-a {
-  from { transform: translate3d(0, 0, 0) scale(1); }
-  to { transform: translate3d(12%, 8%, 0) scale(1.25); }
+.liquid-bg span:nth-child(1) {
+  width: 480px;
+  height: 480px;
+  background: #47B6F3;
+  top: -10%;
+  left: 10%;
+  animation: liquid-float-1 22s ease-in-out infinite alternate;
 }
-
-@keyframes liquid-drift-b {
-  from { transform: translate3d(0, 0, 0) scale(1.1); }
-  to { transform: translate3d(-14%, -10%, 0) scale(0.9); }
+.liquid-bg span:nth-child(2) {
+  width: 420px;
+  height: 420px;
+  background: #8ACDBA;
+  bottom: -15%;
+  right: 5%;
+  animation: liquid-float-2 26s ease-in-out infinite alternate;
 }
-
-@keyframes liquid-drift-c {
-  from { transform: translate3d(0, 0, 0) scale(0.95); }
-  to { transform: translate3d(8%, -12%, 0) scale(1.2); }
+@keyframes liquid-float-1 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(60px, 40px) scale(1.15); }
 }
-
-@utility liquid-a {
-  animation: liquid-drift-a 22s ease-in-out infinite alternate;
+@keyframes liquid-float-2 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-50px, -30px) scale(1.1); }
 }
-
-@utility liquid-b {
-  animation: liquid-drift-b 25s ease-in-out infinite alternate;
-}
-
-@utility liquid-c {
-  animation: liquid-drift-c 19s ease-in-out infinite alternate;
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .liquid-a, .liquid-b, .liquid-c { animation: none; }
+  .liquid-bg span { animation: none; }
 }
 
 html { scroll-behavior: smooth; }
