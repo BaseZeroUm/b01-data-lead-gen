@@ -312,4 +312,9 @@
   .liquid-bg span { animation: none; }
 }
 
+.felipe-portrait {
+  transform: scale(1.45);
+  transform-origin: top center;
+}
+
 html { scroll-behavior: smooth; }
