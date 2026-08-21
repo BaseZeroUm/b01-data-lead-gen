@@ -4,7 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 const emailOk = (v: string) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim());
 const phoneOk = (v: string) => v.replace(/\D/g, "").length >= 10;
 
-const WHATSAPP_URL = "https://wa.me/5511999999999";
+const WHATSAPP_URL = "https://wa.me/5511911380734";
 
 export function LeadForm() {
   const [name, setName] = useState("");
