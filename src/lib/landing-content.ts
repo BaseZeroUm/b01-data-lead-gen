@@ -1,6 +1,8 @@
 import portalVisaoGeral from "@/assets/portal-visao-geral.png.asset.json";
 import portalFaturamento from "@/assets/portal-faturamento.png.asset.json";
 import portalPrevisao from "@/assets/portal-previsao.png.asset.json";
+import portalChatWidget from "@/assets/portal-chat-widget.png.asset.json";
+import portalChatPagina from "@/assets/portal-chat-pagina.png.asset.json";
 import iconBI from "@/assets/Group_41-2.png.asset.json";
 import iconEng from "@/assets/Group_44-2.png.asset.json";
 import iconSci from "@/assets/Group_1000011548-2.png.asset.json";
@@ -52,5 +54,17 @@ export const PORTAL_TABS = [
     label: "Previsão",
     url: portalPrevisao.url,
     alt: "Portal B01: previsão de receita, churn projetado, LTV estimado e retenção por cohort",
+  },
+  {
+    id: "chat-painel",
+    label: "Chat de IA",
+    url: portalChatWidget.url,
+    alt: "Portal B01: assistente de dados respondendo sobre faturamento direto no painel",
+  },
+  {
+    id: "chat-completo",
+    label: "Assistente de dados",
+    url: portalChatPagina.url,
+    alt: "Portal B01: tela completa do assistente de dados com resposta em linguagem natural",
   },
 ];
