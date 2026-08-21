@@ -218,7 +218,7 @@ function Landing() {
                 <img
                   src={felipePortrait}
                   alt="Felipe Garcez, fundador da B01"
-                  className="felipe-portrait h-full w-full object-cover object-top"
+                  className="h-full w-full object-cover object-[center_22%] scale-[1.02]"
                   loading="lazy"
                 />
               </div>
