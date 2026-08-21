@@ -5,6 +5,7 @@ import logoAsset from "@/assets/logo.png.asset.json";
 import block64 from "@/assets/Group_64.png.asset.json";
 import block65 from "@/assets/Group_65.png.asset.json";
 import felipePortrait from "@/assets/felipe-garcez-crop.jpg";
+import daniloPortrait from "@/assets/danilo-crivellaro.png.asset.json";
 import { PILLARS, ABOUT_PILLS, PORTAL_TABS } from "@/lib/landing-content";
 import { LeadForm } from "@/components/LeadForm";
 
@@ -203,32 +204,60 @@ function Landing() {
       {/* Sobre */}
       <section className="section-dark glow-bottom border-t border-white/10">
         <div className="liquid-bg" aria-hidden="true"><span /><span /></div>
-        <div className="section-padding relative z-[1] mx-auto grid max-w-6xl gap-12 px-5 sm:gap-16 md:grid-cols-[0.8fr_1.2fr] md:items-start">
-          <div className="card-dark w-full max-w-[320px] self-start overflow-hidden rounded-[24px] [aspect-ratio:4/5]">
-            <img
-              src={felipePortrait}
-              alt="Felipe Garcez, fundador da B01"
-              className="felipe-portrait h-full w-full object-cover object-top"
-              loading="lazy"
-            />
-          </div>
-          <div>
-            <h2 className="text-3xl sm:text-5xl">
-              <span className="font-light text-on-dark-muted">Quem </span>
-              <span className="font-extrabold text-on-dark">criou tudo isso?</span>
-            </h2>
-            <p className="mt-10 text-2xl font-extrabold text-on-dark">Felipe Garcez</p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {ABOUT_PILLS.map((pill) => (
-                <span key={pill} className="pill-mint">
-                  {pill}
-                </span>
-              ))}
+        <div className="section-padding relative z-[1] mx-auto max-w-6xl px-5">
+          <h2 className="text-3xl sm:text-5xl">
+            <span className="font-light text-on-dark-muted">Quem </span>
+            <span className="font-extrabold text-on-dark">criou tudo isso?</span>
+          </h2>
+
+          <div className="mt-12 grid gap-12 sm:mt-16 md:grid-cols-2">
+            {/* Felipe */}
+            <div className="flex flex-col gap-8">
+              <div className="card-dark w-full max-w-[320px] overflow-hidden rounded-[24px] [aspect-ratio:4/5]">
+                <img
+                  src={felipePortrait}
+                  alt="Felipe Garcez, fundador da B01"
+                  className="felipe-portrait h-full w-full object-cover object-top"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <p className="text-2xl font-extrabold text-on-dark">Felipe Garcez</p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  {ABOUT_PILLS.map((pill) => (
+                    <span key={pill} className="pill-mint">
+                      {pill}
+                    </span>
+                  ))}
+                </div>
+                <p className="mt-8 max-w-xl text-on-dark-muted">
+                  Fundador da B01, criado dentro de uma empresa de família e formado dentro de
+                  times de dados. Traduz números em decisão para quem precisa decidir hoje.
+                </p>
+              </div>
             </div>
-            <p className="mt-8 max-w-xl text-on-dark-muted">
-              Fundador da B01, criado dentro de uma empresa de família e formado dentro de
-              times de dados. Traduz números em decisão para quem precisa decidir hoje.
-            </p>
+
+            {/* Danilo */}
+            <div className="flex flex-col gap-8">
+              <div className="card-dark w-full max-w-[320px] overflow-hidden rounded-[24px] [aspect-ratio:4/5]">
+                <img
+                  src={daniloPortrait.url}
+                  alt="Danilo Crivellaro, especialista em dados e advogado"
+                  className="h-full w-full object-cover object-top"
+                  loading="lazy"
+                />
+              </div>
+              <div>
+                <p className="text-2xl font-extrabold text-on-dark">Danilo Crivellaro</p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  <span className="pill-mint">Especialista em dados</span>
+                  <span className="pill-mint">Advogado</span>
+                </div>
+                <p className="mt-8 max-w-xl text-on-dark-muted">
+                  Junto com o Felipe, constrói a camada de dados da B01 — com mão na massa e olhar crítico.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
