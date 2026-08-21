@@ -55,4 +55,16 @@ export const PORTAL_TABS = [
     url: portalPrevisao.url,
     alt: "Portal B01: previsão de receita, churn projetado, LTV estimado e retenção por cohort",
   },
+  {
+    id: "chat-painel",
+    label: "Chat de IA",
+    url: portalChatWidget.url,
+    alt: "Portal B01: assistente de dados respondendo sobre faturamento direto no painel",
+  },
+  {
+    id: "chat-completo",
+    label: "Assistente de dados",
+    url: portalChatPagina.url,
+    alt: "Portal B01: tela completa do assistente de dados com resposta em linguagem natural",
+  },
 ];
