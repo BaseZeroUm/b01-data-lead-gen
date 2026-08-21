@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 import logoAsset from "@/assets/logo.png.asset.json";
 import block64 from "@/assets/Group_64.png.asset.json";
