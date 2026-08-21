@@ -5,6 +5,9 @@ import block64 from "@/assets/Group_64.png.asset.json";
 import block65 from "@/assets/Group_65.png.asset.json";
 import portalAsset from "@/assets/portal-b01.png.asset.json";
 import felipeAsset from "@/assets/felipe-garcez.jpg.asset.json";
+import iconBI from "@/assets/Group_41-2.png.asset.json";
+import iconEng from "@/assets/Group_44-2.png.asset.json";
+import iconSci from "@/assets/Group_1000011548-2.png.asset.json";
 import { LeadForm } from "@/components/LeadForm";
 import { LiquidBackdrop } from "@/components/LiquidBackdrop";
 
@@ -46,16 +49,19 @@ const PILLARS = [
   {
     tag: "BI",
     title: "Business Intelligence",
+    icon: iconBI.url,
     body: "Painéis e indicadores que mostram o que está acontecendo no seu negócio agora.",
   },
   {
     tag: "Engenharia",
     title: "Engenharia de Dados",
+    icon: iconEng.url,
     body: "Seus dados organizados e conectados num só lugar, prontos para uso.",
   },
   {
     tag: "Ciência",
     title: "Ciência de Dados",
+    icon: iconSci.url,
     body: "Modelos e análises que ajudam a prever o que vem a seguir.",
   },
 ];
@@ -158,8 +164,24 @@ function Landing() {
           <div className="mt-16 grid gap-6 sm:mt-20 md:grid-cols-3">
             {PILLARS.map((p) => (
               <article key={p.title} className="card-light relative p-8 pt-10">
-                <span className="pill-mint absolute -top-3 left-6">{p.tag}</span>
-                <h3 className="text-xl font-extrabold">{p.title}</h3>
+                <div className="flex items-center gap-4">
+                  <span
+                    aria-hidden="true"
+                    className="block h-11 w-11 shrink-0 bg-brand-blue"
+                    style={{
+                      maskImage: `url(${p.icon})`,
+                      WebkitMaskImage: `url(${p.icon})`,
+                      maskRepeat: "no-repeat",
+                      WebkitMaskRepeat: "no-repeat",
+                      maskPosition: "center",
+                      WebkitMaskPosition: "center",
+                      maskSize: "contain",
+                      WebkitMaskSize: "contain",
+                    }}
+                  />
+                  <span className="pill-mint">{p.tag}</span>
+                </div>
+                <h3 className="mt-6 text-xl font-extrabold">{p.title}</h3>
                 <p className="mt-4 text-on-light/70">{p.body}</p>
               </article>
             ))}
