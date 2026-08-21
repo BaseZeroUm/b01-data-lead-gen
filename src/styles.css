@@ -253,4 +253,52 @@
   &:hover { background: rgb(71 182 243 / 0.12); }
 }
 
+@utility section-pad {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  @media (min-width: 640px) {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+  }
+}
+
+@utility liquid-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+@keyframes liquid-drift-a {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to { transform: translate3d(12%, 8%, 0) scale(1.25); }
+}
+
+@keyframes liquid-drift-b {
+  from { transform: translate3d(0, 0, 0) scale(1.1); }
+  to { transform: translate3d(-14%, -10%, 0) scale(0.9); }
+}
+
+@keyframes liquid-drift-c {
+  from { transform: translate3d(0, 0, 0) scale(0.95); }
+  to { transform: translate3d(8%, -12%, 0) scale(1.2); }
+}
+
+@utility liquid-a {
+  animation: liquid-drift-a 22s ease-in-out infinite alternate;
+}
+
+@utility liquid-b {
+  animation: liquid-drift-b 25s ease-in-out infinite alternate;
+}
+
+@utility liquid-c {
+  animation: liquid-drift-c 19s ease-in-out infinite alternate;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liquid-a, .liquid-b, .liquid-c { animation: none; }
+}
+
 html { scroll-behavior: smooth; }
