@@ -105,7 +105,7 @@ function PortalLogin() {
           <button
             type="submit"
             disabled={!valid || loading}
-            className="btn-gradient w-full justify-center disabled:cursor-not-allowed disabled:opacity-50"
+            className="btn-brand w-full justify-center disabled:cursor-not-allowed disabled:opacity-50"
           >
             {loading ? (
               <span className="inline-flex items-center gap-2">
