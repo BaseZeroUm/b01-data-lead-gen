@@ -27,20 +27,25 @@ export function LeadForm() {
     if (!valid || loading) return;
     setLoading(true);
     setError(null);
-    const { error: insertError } = await supabase.from("leads").insert({
-      name: name.trim().slice(0, 120),
-      company: company.trim().slice(0, 120),
-      whatsapp: whatsapp.trim().slice(0, 40),
-      email: email.trim().slice(0, 200),
-      moment: moment.trim().slice(0, 1000) || null,
-    });
-    setLoading(false);
-    if (insertError) {
+    try {
+      await submitLeadFn({
+        data: {
+          name: name.trim(),
+          company: company.trim(),
+          whatsapp: whatsapp.trim(),
+          email: email.trim(),
+          moment: moment.trim() || null,
+        },
+      });
+    } catch {
+      setLoading(false);
       setError("Não conseguimos enviar agora. Tente novamente em instantes.");
       return;
     }
+    setLoading(false);
     setDone(true);
   }
+
 
   if (done) {
     return (
