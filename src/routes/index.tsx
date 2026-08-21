@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import logoAsset from "@/assets/logo.png.asset.json";
-import markAsset from "@/assets/Camada_1.png.asset.json";
 import block64 from "@/assets/Group_64.png.asset.json";
 import block65 from "@/assets/Group_65.png.asset.json";
 import portalAsset from "@/assets/portal-b01.png.asset.json";
+import felipeAsset from "@/assets/felipe-garcez.jpg.asset.json";
 import { LeadForm } from "@/components/LeadForm";
+import { LiquidBackdrop } from "@/components/LiquidBackdrop";
 
 const TITLE = "B01, consultoria de dados para PME, decida além do achismo";
 const DESCRIPTION =
@@ -83,13 +84,14 @@ function Landing() {
 
       {/* Hero */}
       <section className="section-dark glow-bottom">
+        <LiquidBackdrop />
         <img
           src={block65.url}
           alt=""
           aria-hidden="true"
           className="pointer-events-none absolute -right-10 top-16 w-56 opacity-20 sm:w-80"
         />
-        <div className="relative mx-auto max-w-6xl px-5 py-24 sm:py-32">
+        <div className="section-pad relative mx-auto max-w-6xl px-5">
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-on-dark-label">
             B01 → consultoria de dados para PME
           </p>
@@ -97,11 +99,11 @@ function Landing() {
             <span className="font-light text-on-dark-muted">Toda decisão </span>
             <span className="font-extrabold text-on-dark">precisa de uma base.</span>
           </h1>
-          <p className="mt-7 max-w-2xl text-lg text-on-dark-muted">
+          <p className="mt-10 max-w-2xl text-lg text-on-dark-muted sm:mt-12">
             Unimos business intelligence, engenharia de dados e ciência de dados numa
             consultoria feita para o tamanho da sua PME.
           </p>
-          <a href="#formulario" className="btn-brand mt-10">
+          <a href="#formulario" className="btn-brand mt-12 sm:mt-16">
             Quero sair do escuro ↗
           </a>
         </div>
@@ -109,24 +111,25 @@ function Landing() {
 
       {/* Dor */}
       <section className="section-dark glow-bottom border-t border-white/10">
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:py-28 md:grid-cols-[1.2fr_1fr] md:items-center">
+        <LiquidBackdrop />
+        <div className="section-pad relative mx-auto grid max-w-6xl gap-12 px-5 sm:gap-16 md:grid-cols-[1.2fr_1fr] md:items-center">
           <div>
             <h2 className="text-3xl leading-tight sm:text-5xl">
               <span className="font-light text-on-dark-muted">Cansado de tomar </span>
               <span className="font-extrabold text-on-dark">decisões no escuro?</span>
             </h2>
-            <p className="mt-6 max-w-xl text-lg text-on-dark-muted">
+            <p className="mt-10 max-w-xl text-lg text-on-dark-muted sm:mt-12">
               A maioria das PMEs ainda decide no achismo. Não porque quer, porque nunca
               teve dados organizados para decidir diferente.
             </p>
           </div>
-          <div className="card-dark p-7">
+          <div className="card-dark p-10 sm:p-12">
             <span className="pill-mint">Diagnóstico</span>
-            <p className="mt-5 text-on-dark-muted">
+            <p className="mt-9 text-lg text-on-dark-muted sm:text-xl">
               <span className="font-bold text-brand-blue">↗</span> Sem base, cada reunião
               vira opinião contra opinião.
             </p>
-            <p className="mt-4 text-on-dark-muted">
+            <p className="mt-8 text-lg text-on-dark-muted sm:text-xl">
               <span className="font-bold text-brand-blue">↗</span> Com base, a conversa
               passa a ser sobre o próximo passo.
             </p>
@@ -142,22 +145,22 @@ function Landing() {
           aria-hidden="true"
           className="pointer-events-none absolute -left-12 bottom-8 w-48 opacity-15 sm:w-64"
         />
-        <div className="relative mx-auto max-w-6xl px-5 py-20 sm:py-28">
+        <div className="section-pad relative mx-auto max-w-6xl px-5">
           <h2 className="text-3xl sm:text-5xl">
             <span className="font-light">Como </span>
             <span className="font-extrabold">fazemos?</span>
           </h2>
-          <p className="mt-6 max-w-2xl text-lg text-on-light/70">
+          <p className="mt-10 max-w-2xl text-lg text-on-light/70 sm:mt-12">
             A B01 nasceu para resolver isso. Unimos business intelligence, engenharia de
             dados e ciência de dados em uma consultoria feita pro tamanho de PME.
           </p>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
+          <div className="mt-16 grid gap-6 sm:mt-20 md:grid-cols-3">
             {PILLARS.map((p) => (
-              <article key={p.title} className="card-light relative p-7 pt-9">
+              <article key={p.title} className="card-light relative p-8 pt-10">
                 <span className="pill-mint absolute -top-3 left-6">{p.tag}</span>
                 <h3 className="text-xl font-extrabold">{p.title}</h3>
-                <p className="mt-3 text-on-light/70">{p.body}</p>
+                <p className="mt-4 text-on-light/70">{p.body}</p>
               </article>
             ))}
           </div>
@@ -166,16 +169,16 @@ function Landing() {
 
       {/* Prova */}
       <section className="section-dark glow-bottom">
-        <div className="relative mx-auto max-w-6xl px-5 py-20 sm:py-28">
+        <div className="section-pad relative mx-auto max-w-6xl px-5">
           <h2 className="text-3xl sm:text-5xl">
             <span className="font-light text-on-dark-muted">Um portal, </span>
             <span className="font-extrabold text-on-dark">todos os seus dados.</span>
           </h2>
-          <p className="mt-5 max-w-2xl text-lg text-on-dark-muted">
+          <p className="mt-10 max-w-2xl text-lg text-on-dark-muted sm:mt-12">
             Faturamento, clientes e performance numa visão única, com respostas diretas
             por chat.
           </p>
-          <div className="mt-12 overflow-hidden rounded-[2rem] border border-white/25 shadow-[var(--shadow-portal)]">
+          <div className="mt-16 overflow-hidden rounded-[2rem] border border-white/25 shadow-[var(--shadow-portal)] sm:mt-20">
             <img
               src={portalAsset.url}
               alt="Portal B01: painel de faturamento, ticket médio e conversão com chat de dados"
@@ -188,24 +191,30 @@ function Landing() {
 
       {/* Sobre */}
       <section className="section-dark glow-bottom border-t border-white/10">
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-5 py-20 sm:py-28 md:grid-cols-[0.8fr_1.2fr] md:items-center">
-          <div className="card-dark flex aspect-square items-center justify-center overflow-hidden p-10">
-            <img src={markAsset.url} alt="" aria-hidden="true" className="w-40 opacity-80" />
+        <LiquidBackdrop />
+        <div className="section-pad relative mx-auto grid max-w-6xl gap-12 px-5 sm:gap-16 md:grid-cols-[0.8fr_1.2fr] md:items-center">
+          <div className="card-dark aspect-square overflow-hidden">
+            <img
+              src={felipeAsset.url}
+              alt="Felipe Garcez, fundador da B01"
+              className="h-full w-full object-cover object-top"
+              loading="lazy"
+            />
           </div>
           <div>
             <h2 className="text-3xl sm:text-5xl">
               <span className="font-light text-on-dark-muted">Quem </span>
               <span className="font-extrabold text-on-dark">criou tudo isso?</span>
             </h2>
-            <p className="mt-6 text-2xl font-extrabold text-on-dark">Felipe Garcez</p>
-            <div className="mt-5 flex flex-wrap gap-2">
+            <p className="mt-10 text-2xl font-extrabold text-on-dark">Felipe Garcez</p>
+            <div className="mt-6 flex flex-wrap gap-2">
               {ABOUT_PILLS.map((pill) => (
                 <span key={pill} className="pill-mint">
                   {pill}
                 </span>
               ))}
             </div>
-            <p className="mt-6 max-w-xl text-on-dark-muted">
+            <p className="mt-8 max-w-xl text-on-dark-muted">
               Fundador da B01, criado dentro de uma empresa de família e formado dentro de
               times de dados. Traduz números em decisão para quem precisa decidir hoje.
             </p>
@@ -215,15 +224,15 @@ function Landing() {
 
       {/* CTA + Formulário */}
       <section id="formulario" className="bg-paper text-on-light">
-        <div className="mx-auto max-w-6xl px-5 py-20 sm:py-28">
+        <div className="section-pad mx-auto max-w-6xl px-5">
           <div className="grid gap-12 md:grid-cols-[1fr_1.1fr] md:items-start">
             <div>
               <span className="pill-mint">Para quem é</span>
-              <p className="mt-5 text-lg text-on-light/70">
+              <p className="mt-8 text-lg text-on-light/70">
                 PMEs que já cansaram de decidir no escuro e querem crescer com base em
                 dados, não em intuição.
               </p>
-              <p className="mt-8 text-3xl font-extrabold leading-tight text-brand-blue sm:text-4xl">
+              <p className="mt-10 text-3xl font-extrabold leading-tight text-brand-blue sm:text-4xl">
                 Chega de decidir no escuro. Mandem uma mensagem e vamos achar a base do
                 seu negócio.
               </p>
