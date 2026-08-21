@@ -262,6 +262,15 @@
   }
 }
 
+@utility section-padding {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  @media (min-width: 640px) {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+}
+
 .liquid-bg {
   position: absolute;
   inset: 0;
