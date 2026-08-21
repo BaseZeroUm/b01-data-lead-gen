@@ -5,7 +5,7 @@ export interface LeadInput {
   company: string;
   whatsapp: string;
   email: string;
-  moment?: string | null;
+  moment?: string | null | undefined;
 }
 
 export async function createLead(input: LeadInput) {

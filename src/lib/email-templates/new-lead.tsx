@@ -124,7 +124,7 @@ export const template = {
   component: NewLeadEmail,
   displayName: "Novo lead (B01)",
   subject: (data: Record<string, any>) =>
-    `Novo lead B01: ${data?.name ?? "sem nome"}${data?.company ? ` (${data.company})` : ""}`,
+    `Novo lead B01: ${data?.["name"] ?? "sem nome"}${data?.["company"] ? ` (${data["company"]})` : ""}`,
   to: "felipe.garcez@basezeroum.com.br",
   previewData: {
     name: "Maria Souza",
