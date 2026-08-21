@@ -7,7 +7,6 @@ import portalAsset from "@/assets/portal-b01.png.asset.json";
 import felipeAsset from "@/assets/felipe-garcez.jpg.asset.json";
 import { PILLARS, ABOUT_PILLS } from "@/lib/landing-content";
 import { LeadForm } from "@/components/LeadForm";
-import { LiquidBackdrop } from "@/components/LiquidBackdrop";
 
 const TITLE = "B01, consultoria de dados para PME, decida além do achismo";
 const DESCRIPTION =
@@ -60,14 +59,14 @@ function Landing() {
 
       {/* Hero */}
       <section className="section-dark glow-bottom">
-        <LiquidBackdrop />
+        <div className="liquid-bg" aria-hidden="true"><span /><span /></div>
         <img
           src={block65.url}
           alt=""
           aria-hidden="true"
           className="pointer-events-none absolute -right-10 top-16 w-56 opacity-20 sm:w-80"
         />
-        <div className="section-pad relative mx-auto max-w-6xl px-5">
+        <div className="section-pad relative z-[1] mx-auto max-w-6xl px-5">
           <p className="text-xs font-medium uppercase tracking-[0.18em] text-on-dark-label">
             B01 → consultoria de dados para PME
           </p>
@@ -87,8 +86,8 @@ function Landing() {
 
       {/* Dor */}
       <section className="section-dark glow-bottom border-t border-white/10">
-        <LiquidBackdrop />
-        <div className="section-pad relative mx-auto grid max-w-6xl gap-12 px-5 sm:gap-16 md:grid-cols-[1.2fr_1fr] md:items-center">
+        <div className="liquid-bg" aria-hidden="true"><span /><span /></div>
+        <div className="section-pad relative z-[1] mx-auto grid max-w-6xl gap-12 px-5 sm:gap-16 md:grid-cols-[1.2fr_1fr] md:items-center">
           <div>
             <h2 className="text-3xl leading-tight sm:text-5xl">
               <span className="font-light text-on-dark-muted">Cansado de tomar </span>
@@ -121,7 +120,7 @@ function Landing() {
           aria-hidden="true"
           className="pointer-events-none absolute -left-12 bottom-8 w-48 opacity-15 sm:w-64"
         />
-        <div className="section-pad relative mx-auto max-w-6xl px-5">
+        <div className="section-pad relative z-[1] mx-auto max-w-6xl px-5">
           <h2 className="text-3xl sm:text-5xl">
             <span className="font-light">Como </span>
             <span className="font-extrabold">fazemos?</span>
@@ -161,7 +160,7 @@ function Landing() {
 
       {/* Prova */}
       <section className="section-dark glow-bottom">
-        <div className="section-pad relative mx-auto max-w-6xl px-5">
+        <div className="section-pad relative z-[1] mx-auto max-w-6xl px-5">
           <h2 className="text-3xl sm:text-5xl">
             <span className="font-light text-on-dark-muted">Um portal, </span>
             <span className="font-extrabold text-on-dark">todos os seus dados.</span>
@@ -183,13 +182,13 @@ function Landing() {
 
       {/* Sobre */}
       <section className="section-dark glow-bottom border-t border-white/10">
-        <LiquidBackdrop />
-        <div className="section-pad relative mx-auto grid max-w-6xl gap-12 px-5 sm:gap-16 md:grid-cols-[0.8fr_1.2fr] md:items-center">
-          <div className="card-dark aspect-square overflow-hidden">
+        <div className="liquid-bg" aria-hidden="true"><span /><span /></div>
+        <div className="section-pad relative z-[1] mx-auto grid max-w-6xl gap-12 px-5 sm:gap-16 md:grid-cols-[0.8fr_1.2fr] md:items-start">
+          <div className="card-dark w-full max-w-[320px] self-start overflow-hidden rounded-[24px] [aspect-ratio:4/5]">
             <img
               src={felipeAsset.url}
               alt="Felipe Garcez, fundador da B01"
-              className="h-full w-full object-cover object-top"
+              className="h-full w-full object-cover [object-position:top_center]"
               loading="lazy"
             />
           </div>
