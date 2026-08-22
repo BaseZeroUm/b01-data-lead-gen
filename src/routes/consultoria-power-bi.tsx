@@ -4,6 +4,7 @@ import logoAsset from "@/assets/logo.png.asset.json";
 import block65 from "@/assets/Group_65.png.asset.json";
 import portalVisaoGeral from "@/assets/portal-visao-geral.png.asset.json";
 import { LeadForm } from "@/components/LeadForm";
+import { ToolLogos } from "@/components/ToolLogos";
 
 const URL = "https://basezeroum.com.br/consultoria-power-bi";
 const TITLE = "Consultoria Power BI para PME | B01 BaseZeroUm";
