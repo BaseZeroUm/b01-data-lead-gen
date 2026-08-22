@@ -29,7 +29,7 @@ export function BlogCover({
         src={src}
         alt={alt}
         loading={priority ? "eager" : "lazy"}
-        className="h-full w-full object-contain p-6 sm:p-8"
+        className="h-full w-full object-contain p-3 sm:p-5"
       />
 
       {/* Barra estilo janela, sobreposta na capa */}
@@ -39,10 +39,10 @@ export function BlogCover({
           <span className="block size-1.5 rounded-full bg-white/85 sm:size-2" />
           <span className="block size-1.5 rounded-full bg-white/85 sm:size-2" />
         </span>
-        <span className="mx-auto truncate text-[0.6rem] font-bold uppercase tracking-[0.18em] text-white/85 sm:text-[0.7rem]">
+        <span className="mx-auto text-[0.6rem] font-bold uppercase tracking-[0.18em] text-white/85 sm:text-[0.7rem]">
           {category}
         </span>
-        <span aria-hidden="true" className="w-8 sm:w-10" />
+        <span aria-hidden="true" className="w-6 sm:w-8" />
       </div>
 
       {/* Autor */}

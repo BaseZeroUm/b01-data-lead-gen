@@ -58,7 +58,7 @@ function BlogIndex() {
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-on-dark-muted">{DESCRIPTION}</p>
 
-          <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-8 sm:grid-cols-2">
             {BLOG_POSTS.map((post) => (
               <Link
                 key={post.slug}
