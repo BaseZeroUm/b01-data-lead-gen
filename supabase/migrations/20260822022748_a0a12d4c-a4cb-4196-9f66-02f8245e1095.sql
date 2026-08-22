@@ -1,0 +1,3 @@
+ALTER TABLE public.leads ADD COLUMN IF NOT EXISTS source text NOT NULL DEFAULT 'b01';
+ALTER TABLE public.leads ADD COLUMN IF NOT EXISTS profile text;
+ALTER TABLE public.leads ALTER COLUMN company DROP NOT NULL;
