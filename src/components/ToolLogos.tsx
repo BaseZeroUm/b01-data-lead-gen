@@ -92,16 +92,12 @@ const GROUPS: { title: string; caption: string; tools: Tool[] }[] = [
     tools: ["Databricks", "Airflow", "Python", "SQL", "Snowflake", "BigQuery"].map(byName),
   },
   {
-    title: "Nuvem e bases",
-    caption: "Onde os dados moram, com escala e custo sob controle.",
-    tools: ["AWS", "Azure", "Google Cloud", "PostgreSQL", "MySQL", "MongoDB"].map(byName),
-  },
-  {
-    title: "Medição e produto",
-    caption: "Sinais de comportamento e receita conectados ao restante.",
-    tools: ["Google Analytics"].map(byName),
+    title: "Nuvem, bases e medição",
+    caption: "Onde os dados moram e de onde eles vêm.",
+    tools: ["AWS", "Azure", "Google Cloud", "MySQL", "MongoDB", "Google Analytics"].map(byName),
   },
 ];
+
 
 function ToolIcon({ tool }: { tool: Tool }) {
   const isOutline = tool.fill === "outline";
