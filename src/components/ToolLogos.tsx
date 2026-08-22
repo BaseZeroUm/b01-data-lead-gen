@@ -75,6 +75,26 @@ export const TOOLS: Tool[] = [
     name: "MySQL",
     d: "M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z",
   },
+  {
+    name: "PostgreSQL",
+    d: "M12 2c-4.4 0-8 1.1-8 2.5v13C4 18.9 7.6 20 12 20s8-1.1 8-2.5v-13C20 3.1 16.4 2 12 2Zm0 2c3.5 0 6 1 6 1.5S15.5 7 12 7 6 5.5 6 5.5 8.5 4 12 4Zm-6 3.8c1.5.7 4 1.2 6 1.2s4.5-.5 6-1.2v9.4c-1.5.7-4 1.2-6 1.2s-4.5-.5-6-1.2V7.8Z",
+  },
+  {
+    name: "Jupyter",
+    d: "M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2Zm0 2a8 8 0 1 1 0 16 8 8 0 0 1 0-16Zm0 3c-2 0-3.8 1-4.8 2.5C7.6 9.5 8.7 10 12 10c3.3 0 4.4-.5 4.8-2.5C16.8 8 15 7 12 7Zm0 4.5c-3.8 0-6.5 1.5-6.5 3.5s2.7 3.5 6.5 3.5 6.5-1.5 6.5-3.5-2.7-3.5-6.5-3.5Z",
+  },
+  {
+    name: "Scikit-learn",
+    d: "M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2Zm-3 5c1 0 1.5 1 1.5 2s-.5 2-1.5 2-1.5-1-1.5-2 .5-2 1.5-2Zm7 0c1 0 1.5 1 1.5 2s-.5 2-1.5 2-1.5-1-1.5-2 .5-2 1.5-2ZM7 14c1.5 2 2.5 3 5 3s3.5-1 5-3c-.5 2.5-2.5 4-5 4s-4.5-1.5-5-4Z",
+  },
+  {
+    name: "TensorFlow",
+    d: "M12 2L2 20h20L12 2Zm0 4.5L18 18H6L12 6.5Z",
+  },
+  {
+    name: "R",
+    d: "M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2Zm-1 5h3.5c2 0 3.5 1.5 3.5 3.5S16.5 14 14.5 14h-.5l3 6h-2.5l-2.8-5.5H11V20H9V7h2Zm1 2v3.5h2.5c1 0 1.5-.5 1.5-1.5S15.5 9 14.5 9h-2.5Z",
+  },
 ];
 
 const byName = (name: string): Tool =>
@@ -89,12 +109,17 @@ const GROUPS: { title: string; caption: string; tools: Tool[] }[] = [
   {
     title: "Engenharia de dados",
     caption: "Coleta, tratamento e orquestração da base que alimenta tudo.",
-    tools: ["Databricks", "Airflow", "Python", "SQL", "Snowflake", "BigQuery"].map(byName),
+    tools: ["Databricks", "Airflow", "Snowflake", "BigQuery", "SQL", "Python"].map(byName),
+  },
+  {
+    title: "Ciência de dados e IA",
+    caption: "Modelos, previsões e análises avançadas que vão além do relatório.",
+    tools: ["Jupyter", "Scikit-learn", "TensorFlow", "R"].map(byName),
   },
   {
     title: "Nuvem, bases e medição",
     caption: "Onde os dados moram e de onde eles vêm.",
-    tools: ["AWS", "Azure", "Google Cloud", "MySQL", "MongoDB", "Google Analytics"].map(byName),
+    tools: ["AWS", "Azure", "Google Cloud", "MySQL", "PostgreSQL", "MongoDB"].map(byName),
   },
 ];
 
@@ -118,7 +143,7 @@ function ToolIcon({ tool }: { tool: Tool }) {
 
 export function ToolLogos() {
   return (
-    <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-5 md:grid-cols-2">
       {GROUPS.map((group) => (
         <section
           key={group.title}
@@ -142,4 +167,5 @@ export function ToolLogos() {
     </div>
   );
 }
+
 

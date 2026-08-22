@@ -173,8 +173,8 @@ function Landing() {
             <span className="font-extrabold text-on-dark">conectada numa só base.</span>
           </h2>
           <p className="mt-8 max-w-2xl text-lg text-on-dark-muted">
-            Separamos por frente: visualização, engenharia de dados e nuvem. Você começa pelo que
-            já usa e a gente conecta o resto para tudo falar a mesma língua.
+            Separamos por frente: visualização, engenharia de dados, ciência de dados e nuvem.
+            Você começa pelo que já usa e a gente conecta o resto para tudo falar a mesma língua.
           </p>
 
           <div className="mt-14">
