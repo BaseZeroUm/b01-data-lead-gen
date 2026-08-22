@@ -83,6 +83,9 @@ function CreatorsLanding() {
             alt="Creators 01"
             className="h-5 w-auto [filter:invert(1)_hue-rotate(180deg)] sm:h-6"
           />
+          <Link to="/" className="text-sm font-bold text-on-dark-muted hover:text-brand-blue">
+            Base 01
+          </Link>
         </div>
       </header>
 
