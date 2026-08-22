@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import logoAsset from "@/assets/logo.png.asset.json";
 import block64 from "@/assets/Group_64.png.asset.json";
 import block65 from "@/assets/Group_65.png.asset.json";
-import heroVideo from "@/assets/b01_hero_1080.mp4.asset.json";
+import heroVideo from "@/assets/b01_hero_som.mp4.asset.json";
 import heroPoster from "@/assets/b01_hero_poster.jpg.asset.json";
 import felipePortrait from "@/assets/felipe-garcez-crop.jpg";
 import daniloPortrait from "@/assets/danilo-crivellaro.png.asset.json";
