@@ -139,8 +139,8 @@ function PowerBiPage() {
           </h1>
           <p className="mt-10 max-w-2xl text-lg text-on-dark-muted sm:mt-12">
             Painéis, indicadores e uma base de dados organizada por trás. A B01 implanta o
-            Power BI no tamanho da sua empresa, com foco nas decisões que você toma toda
-            semana.
+            Power BI no tamanho da sua empresa e trabalha com as ferramentas que a sua
+            operação já usa: Excel, Databricks, SQL, Python e as nuvens de dados.
           </p>
           <a href="#formulario" className="btn-brand mt-12 sm:mt-16">
             Falar sobre o meu Power BI ↗
