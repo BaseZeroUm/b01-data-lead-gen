@@ -133,6 +133,13 @@ function Landing() {
             A B01 nasceu para resolver isso. Unimos business intelligence, engenharia de
             dados e ciência de dados em uma consultoria feita pro tamanho de PME.
           </p>
+          <p className="mt-6 text-lg">
+            <Link to="/consultoria-power-bi" className="font-bold text-brand-blue">
+              ↗ Ver como funciona a consultoria em Power BI
+            </Link>
+          </p>
+
+
 
           <div className="mt-16 grid gap-6 sm:mt-20 md:grid-cols-3">
             {PILLARS.map((p) => (

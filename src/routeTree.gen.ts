@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ConsultoriaPowerBiRouteImport } from './routes/consultoria-power-bi'
 import { Route as PortalRouteImport } from './routes/portal'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
@@ -17,6 +18,11 @@ import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/l
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConsultoriaPowerBiRoute = ConsultoriaPowerBiRouteImport.update({
+  id: '/consultoria-power-bi',
+  path: '/consultoria-power-bi',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortalRoute = PortalRouteImport.update({
@@ -38,12 +44,14 @@ const LovableEmailTransactionalPreviewRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/consultoria-power-bi': typeof ConsultoriaPowerBiRoute
   '/portal': typeof PortalRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/consultoria-power-bi': typeof ConsultoriaPowerBiRoute
   '/portal': typeof PortalRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -51,6 +59,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/consultoria-power-bi': typeof ConsultoriaPowerBiRoute
   '/portal': typeof PortalRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -58,12 +67,22 @@ export interface FileRoutesById {
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/portal' | '/sitemap.xml' | '/lovable/email/transactional/preview'
+    | '/'
+    | '/consultoria-power-bi'
+    | '/portal'
+    | '/sitemap.xml'
+    | '/lovable/email/transactional/preview'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/portal' | '/sitemap.xml' | '/lovable/email/transactional/preview'
+  to:
+    | '/'
+    | '/consultoria-power-bi'
+    | '/portal'
+    | '/sitemap.xml'
+    | '/lovable/email/transactional/preview'
   id:
     | '__root__'
     | '/'
+    | '/consultoria-power-bi'
     | '/portal'
     | '/sitemap.xml'
     | '/lovable/email/transactional/preview'
@@ -71,6 +90,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ConsultoriaPowerBiRoute: typeof ConsultoriaPowerBiRoute
   PortalRoute: typeof PortalRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
@@ -83,6 +103,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/consultoria-power-bi': {
+      id: '/consultoria-power-bi'
+      path: '/consultoria-power-bi'
+      fullPath: '/consultoria-power-bi'
+      preLoaderRoute: typeof ConsultoriaPowerBiRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portal': {
@@ -111,6 +138,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ConsultoriaPowerBiRoute: ConsultoriaPowerBiRoute,
   PortalRoute: PortalRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
