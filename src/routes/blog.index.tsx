@@ -4,6 +4,8 @@ import logoAsset from "@/assets/logo.png.asset.json";
 import { BLOG_POSTS, formatDate } from "@/lib/blog-content";
 import { BlogCover } from "@/components/BlogCover";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import { EmailLink, InstagramLink } from "@/components/SocialLinks";
+
 
 const TITLE = "Blog da B01, dados e decisão para PME";
 const DESCRIPTION =
@@ -89,19 +91,28 @@ function BlogIndex() {
       </section>
 
       <footer className="section-dark border-t border-white/10">
-        <div className="relative mx-auto flex max-w-6xl flex-col gap-6 px-5 py-12 sm:flex-row sm:items-center sm:justify-between">
+        <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <img src={logoAsset.url} alt="B01 BaseZeroUm" className="h-7 w-auto" />
+            <Link to="/">
+              <img src={logoAsset.url} alt="B01 BaseZeroUm" className="h-7 w-auto" />
+            </Link>
             <p className="mt-3 text-sm text-on-dark-label">Decide Beyond</p>
           </div>
-          <div className="text-sm text-on-dark-muted">
-            <Link to="/blog" className="text-brand-blue">
-              Blog
-            </Link>
-            <p className="mt-2 text-on-dark-label">© {year} B01 · BaseZeroUm</p>
+          <div className="flex flex-col gap-3 text-sm sm:items-end">
+            <div className="flex flex-wrap items-center gap-4">
+              <Link to="/blog" className="text-brand-blue hover:underline">
+                Blog
+              </Link>
+              <span className="text-white/20">·</span>
+              <EmailLink />
+              <span className="text-white/20">·</span>
+              <InstagramLink />
+            </div>
+            <p className="text-on-dark-label">© {year} B01 · BaseZeroUm</p>
           </div>
         </div>
       </footer>
     </div>
   );
 }
+

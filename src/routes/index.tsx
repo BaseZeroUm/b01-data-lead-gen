@@ -11,6 +11,8 @@ import daniloPortrait from "@/assets/danilo-crivellaro.png.asset.json";
 import { PILLARS, ABOUT_PILLS, PORTAL_TABS } from "@/lib/landing-content";
 import { LeadForm } from "@/components/LeadForm";
 import { ToolLogos } from "@/components/ToolLogos";
+import { BlogLink, EmailLink, InstagramLink } from "@/components/SocialLinks";
+
 
 const TITLE = "B01, consultoria de dados para PME, decida além do achismo";
 const DESCRIPTION =
@@ -351,19 +353,20 @@ function Landing() {
       </section>
 
       <footer className="section-dark">
-        <div className="relative mx-auto flex max-w-6xl flex-col gap-6 px-5 py-12 sm:flex-row sm:items-center sm:justify-between">
+        <div className="relative mx-auto flex max-w-6xl flex-col gap-8 px-5 py-12 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <img src={logoAsset.url} alt="B01 BaseZeroUm" className="h-7 w-auto" />
             <p className="mt-3 text-sm text-on-dark-label">Decide Beyond</p>
           </div>
-          <div className="text-sm text-on-dark-muted">
-            <Link to="/blog" className="mr-4 text-brand-blue">
-              Blog
-            </Link>
-            <a href="mailto:felipe.garcez@basezeroum.com.br" className="text-brand-blue">
-              felipe.garcez@basezeroum.com.br
-            </a>
-            <p className="mt-2 text-on-dark-label">© {year} B01 · BaseZeroUm</p>
+          <div className="flex flex-col gap-3 text-sm sm:items-end">
+            <div className="flex flex-wrap items-center gap-4">
+              <BlogLink />
+              <span className="text-white/20">·</span>
+              <EmailLink />
+              <span className="text-white/20">·</span>
+              <InstagramLink />
+            </div>
+            <p className="text-on-dark-label">© {year} B01 · BaseZeroUm</p>
           </div>
         </div>
       </footer>
