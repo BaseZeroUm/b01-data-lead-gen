@@ -122,7 +122,13 @@ function PortalLogin() {
             Portal em implantação. Dúvidas de acesso: felipe.garcez@basezeroum.com.br
           </p>
         </form>
+
+        <div className="mt-10 flex flex-col items-center gap-3 text-sm text-on-dark-muted">
+          <InstagramLink />
+          <p>© {new Date().getFullYear()} B01 · BaseZeroUm</p>
+        </div>
       </main>
     </div>
   );
 }
+
