@@ -173,9 +173,10 @@ function Landing() {
             <span className="font-extrabold text-on-dark">conectada numa só base.</span>
           </h2>
           <p className="mt-8 max-w-2xl text-lg text-on-dark-muted">
-            Não importa se você começa no Excel, no Power BI ou no banco de dados em nuvem.
-            Trabalhamos com as ferramentas que você já usa — e deixamos tudo falando a mesma língua.
+            Separamos por frente: visualização, engenharia de dados e nuvem. Você começa pelo que
+            já usa e a gente conecta o resto para tudo falar a mesma língua.
           </p>
+
           <div className="mt-14">
             <ToolLogos />
           </div>
