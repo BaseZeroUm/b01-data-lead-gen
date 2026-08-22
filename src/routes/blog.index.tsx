@@ -9,7 +9,7 @@ const TITLE = "Blog da B01, dados e decisão para PME";
 const DESCRIPTION =
   "Textos curtos sobre pensamento analítico, business intelligence e como decidir com dados em vez de achismo.";
 
-export const Route = createFileRoute("/blog")({
+export const Route = createFileRoute("/blog/")({
   head: () => ({
     meta: [
       { title: TITLE },
