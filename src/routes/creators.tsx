@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 
 import creatorsLogo from "@/assets/creators01-logo.png.asset.json";
 import block64 from "@/assets/Group_64.png.asset.json";
@@ -83,6 +83,9 @@ function CreatorsLanding() {
             alt="Creators 01"
             className="h-5 w-auto [filter:invert(1)_hue-rotate(180deg)] sm:h-6"
           />
+          <Link to="/" className="text-sm font-bold text-on-dark-muted hover:text-brand-blue">
+            Base 01
+          </Link>
         </div>
       </header>
 

@@ -74,6 +74,9 @@ function Landing() {
             <Link to="/blog" className="text-sm font-bold text-on-dark-muted hover:text-brand-blue">
               Blog
             </Link>
+            <Link to="/creators" className="text-sm font-bold text-on-dark-muted hover:text-brand-blue">
+              Creators 01
+            </Link>
             <Link to="/portal" className="btn-outline-blue">
               Portal do cliente
             </Link>
