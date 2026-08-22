@@ -11,6 +11,8 @@ import daniloPortrait from "@/assets/danilo-crivellaro.png.asset.json";
 import { PILLARS, ABOUT_PILLS, PORTAL_TABS } from "@/lib/landing-content";
 import { LeadForm } from "@/components/LeadForm";
 import { ToolLogos } from "@/components/ToolLogos";
+import { BlogLink, EmailLink, InstagramLink } from "@/components/SocialLinks";
+
 
 const TITLE = "B01, consultoria de dados para PME, decida além do achismo";
 const DESCRIPTION =
