@@ -169,12 +169,12 @@ function Landing() {
         <div className="section-pad relative z-[1] mx-auto max-w-6xl px-5">
           <span className="pill-mint">Ferramentas</span>
           <h2 className="mt-8 text-3xl leading-tight sm:text-5xl">
-            <span className="font-light text-on-dark-muted">Power BI é o começo, </span>
-            <span className="font-extrabold text-on-dark">não o limite.</span>
+            <span className="font-light text-on-dark-muted">A mesma stack da sua operação, </span>
+            <span className="font-extrabold text-on-dark">conectada numa só base.</span>
           </h2>
           <p className="mt-8 max-w-2xl text-lg text-on-dark-muted">
-            A B01 se adapta à stack da sua empresa. Desde uma planilha bem organizada até
-            um banco de dados em nuvem.
+            Não importa se você começa no Excel, no Power BI ou no banco de dados em nuvem.
+            Trabalhamos com as ferramentas que você já usa — e deixamos tudo falando a mesma língua.
           </p>
           <div className="mt-14">
             <ToolLogos />
