@@ -180,6 +180,28 @@ function PowerBiPage() {
         </div>
       </section>
 
+      {/* Ferramentas */}
+      <section className="section-dark glow-bottom border-t border-white/10">
+        <div className="liquid-bg" aria-hidden="true">
+          <span />
+          <span />
+        </div>
+        <div className="section-pad relative z-[1] mx-auto max-w-6xl px-5">
+          <span className="pill-mint">Ferramentas</span>
+          <h2 className="mt-8 text-3xl leading-tight sm:text-5xl">
+            <span className="font-light text-on-dark-muted">Power BI é o começo, </span>
+            <span className="font-extrabold text-on-dark">não o limite.</span>
+          </h2>
+          <p className="mt-8 max-w-2xl text-lg text-on-dark-muted">
+            Escolhemos a ferramenta a partir do seu cenário: às vezes o Excel resolve, às
+            vezes o volume de dados pede Databricks e um banco de verdade por trás do painel.
+          </p>
+          <div className="mt-14">
+            <ToolLogos />
+          </div>
+        </div>
+      </section>
+
       {/* Como funciona */}
       <section className="relative overflow-hidden bg-paper text-on-light">
         <div className="section-pad mx-auto max-w-6xl px-5">
