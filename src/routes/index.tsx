@@ -68,10 +68,14 @@ function Landing() {
       <header className="sticky top-0 z-50 bg-ink/90 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <img src={logoAsset.url} alt="B01 BaseZeroUm" className="h-7 w-auto" />
-          <Link to="/portal" className="btn-outline-blue">
-            Portal do cliente
-          </Link>
-
+          <nav className="flex items-center gap-4">
+            <Link to="/blog" className="text-sm font-bold text-on-dark-muted hover:text-brand-blue">
+              Blog
+            </Link>
+            <Link to="/portal" className="btn-outline-blue">
+              Portal do cliente
+            </Link>
+          </nav>
         </div>
       </header>
 
