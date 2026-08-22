@@ -8,6 +8,7 @@ import felipePortrait from "@/assets/felipe-garcez-crop.jpg";
 import daniloPortrait from "@/assets/danilo-crivellaro.png.asset.json";
 import { PILLARS, ABOUT_PILLS, PORTAL_TABS } from "@/lib/landing-content";
 import { LeadForm } from "@/components/LeadForm";
+import { ToolLogos } from "@/components/ToolLogos";
 
 const TITLE = "B01, consultoria de dados para PME, decida além do achismo";
 const DESCRIPTION =
@@ -133,13 +134,6 @@ function Landing() {
             A B01 nasceu para resolver isso. Unimos business intelligence, engenharia de
             dados e ciência de dados em uma consultoria feita pro tamanho de PME.
           </p>
-          <p className="mt-6 text-lg">
-            <Link to="/consultoria-power-bi" className="font-bold text-brand-blue">
-              ↗ Ver como funciona a consultoria em Power BI
-            </Link>
-          </p>
-
-
 
           <div className="mt-16 grid gap-6 sm:mt-20 md:grid-cols-3">
             {PILLARS.map((p) => (
@@ -165,6 +159,25 @@ function Landing() {
                 <p className="mt-4 text-on-light/70">{p.body}</p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Ferramentas */}
+      <section className="section-dark glow-bottom border-t border-white/10">
+        <div className="liquid-bg" aria-hidden="true"><span /><span /></div>
+        <div className="section-pad relative z-[1] mx-auto max-w-6xl px-5">
+          <span className="pill-mint">Ferramentas</span>
+          <h2 className="mt-8 text-3xl leading-tight sm:text-5xl">
+            <span className="font-light text-on-dark-muted">Power BI é o começo, </span>
+            <span className="font-extrabold text-on-dark">não o limite.</span>
+          </h2>
+          <p className="mt-8 max-w-2xl text-lg text-on-dark-muted">
+            A B01 se adapta à stack da sua empresa. Desde uma planilha bem organizada até
+            um banco de dados em nuvem.
+          </p>
+          <div className="mt-14">
+            <ToolLogos />
           </div>
         </div>
       </section>
