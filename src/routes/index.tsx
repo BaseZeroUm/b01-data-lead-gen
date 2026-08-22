@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import logoAsset from "@/assets/logo.png.asset.json";
 import block64 from "@/assets/Group_64.png.asset.json";
 import block65 from "@/assets/Group_65.png.asset.json";
-import heroVideo from "@/assets/b01_hero_1080.mp4.asset.json";
+import heroVideo from "@/assets/b01_hero_som.mp4.asset.json";
 import heroPoster from "@/assets/b01_hero_poster.jpg.asset.json";
 import felipePortrait from "@/assets/felipe-garcez-crop.jpg";
 import daniloPortrait from "@/assets/danilo-crivellaro.png.asset.json";
@@ -51,6 +51,17 @@ function Landing() {
   const year = new Date().getFullYear();
   const [activeTab, setActiveTab] = useState(PORTAL_TABS[0]!.id);
   const currentTab = PORTAL_TABS.find((t) => t.id === activeTab) ?? PORTAL_TABS[0]!;
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+
+  const toggleSound = () => {
+    const el = videoRef.current;
+    if (!el) return;
+    const next = !muted;
+    el.muted = next;
+    setMuted(next);
+    if (!next) void el.play().catch(() => {});
+  };
 
   return (
     <div className="min-h-screen bg-paper font-sans">
@@ -93,8 +104,9 @@ function Landing() {
             </div>
 
             <div className="relative">
-              <div className="overflow-hidden rounded-3xl border border-white/15 shadow-[var(--shadow-portal)] [aspect-ratio:16/9]">
+              <div className="relative overflow-hidden rounded-3xl border border-white/15 shadow-[var(--shadow-portal)] [aspect-ratio:16/9]">
                 <video
+                  ref={videoRef}
                   src={heroVideo.url}
                   poster={heroPoster.url}
                   autoPlay
@@ -105,6 +117,14 @@ function Landing() {
                   className="h-full w-full object-cover"
                   aria-label="Demonstração do Portal B01 com dados de receita"
                 />
+                <button
+                  type="button"
+                  onClick={toggleSound}
+                  aria-label={muted ? "Ativar som do vídeo" : "Desativar som do vídeo"}
+                  className="absolute bottom-4 right-4 rounded-full border border-white/25 bg-black/50 px-4 py-2 text-sm font-bold text-white backdrop-blur transition hover:border-[var(--brand-blue)] hover:text-[var(--brand-blue)]"
+                >
+                  {muted ? "🔇 Ativar som" : "🔊 Som ligado"}
+                </button>
               </div>
             </div>
           </div>
