@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ConsultoriaPowerBiRouteImport } from './routes/consultoria-power-bi'
+import { Route as CreatorsRouteImport } from './routes/creators'
 import { Route as PortalRouteImport } from './routes/portal'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -25,6 +26,11 @@ const IndexRoute = IndexRouteImport.update({
 const ConsultoriaPowerBiRoute = ConsultoriaPowerBiRouteImport.update({
   id: '/consultoria-power-bi',
   path: '/consultoria-power-bi',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CreatorsRoute = CreatorsRouteImport.update({
+  id: '/creators',
+  path: '/creators',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortalRoute = PortalRouteImport.update({
@@ -57,6 +63,7 @@ const LovableEmailTransactionalPreviewRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/consultoria-power-bi': typeof ConsultoriaPowerBiRoute
+  '/creators': typeof CreatorsRoute
   '/portal': typeof PortalRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -66,6 +73,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/consultoria-power-bi': typeof ConsultoriaPowerBiRoute
+  '/creators': typeof CreatorsRoute
   '/portal': typeof PortalRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -76,6 +84,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/consultoria-power-bi': typeof ConsultoriaPowerBiRoute
+  '/creators': typeof CreatorsRoute
   '/portal': typeof PortalRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -87,6 +96,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/consultoria-power-bi'
+    | '/creators'
     | '/portal'
     | '/sitemap.xml'
     | '/blog/$slug'
@@ -96,6 +106,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/consultoria-power-bi'
+    | '/creators'
     | '/portal'
     | '/sitemap.xml'
     | '/blog/$slug'
@@ -105,6 +116,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/consultoria-power-bi'
+    | '/creators'
     | '/portal'
     | '/sitemap.xml'
     | '/blog/$slug'
@@ -115,6 +127,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ConsultoriaPowerBiRoute: typeof ConsultoriaPowerBiRoute
+  CreatorsRoute: typeof CreatorsRoute
   PortalRoute: typeof PortalRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
@@ -136,6 +149,13 @@ declare module '@tanstack/react-router' {
       path: '/consultoria-power-bi'
       fullPath: '/consultoria-power-bi'
       preLoaderRoute: typeof ConsultoriaPowerBiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/creators': {
+      id: '/creators'
+      path: '/creators'
+      fullPath: '/creators'
+      preLoaderRoute: typeof CreatorsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portal': {
@@ -179,6 +199,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ConsultoriaPowerBiRoute: ConsultoriaPowerBiRoute,
+  CreatorsRoute: CreatorsRoute,
   PortalRoute: PortalRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,
