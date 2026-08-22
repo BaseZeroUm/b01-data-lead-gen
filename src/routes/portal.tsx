@@ -2,6 +2,8 @@ import { useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 
 import logoAsset from "@/assets/logo.png.asset.json";
+import { EmailLink, InstagramLink } from "@/components/SocialLinks";
+
 
 const TITLE = "Portal do cliente | B01 BaseZeroUm";
 const DESCRIPTION =

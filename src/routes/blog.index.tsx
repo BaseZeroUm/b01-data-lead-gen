@@ -4,6 +4,8 @@ import logoAsset from "@/assets/logo.png.asset.json";
 import { BLOG_POSTS, formatDate } from "@/lib/blog-content";
 import { BlogCover } from "@/components/BlogCover";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import { EmailLink, InstagramLink } from "@/components/SocialLinks";
+
 
 const TITLE = "Blog da B01, dados e decisão para PME";
 const DESCRIPTION =

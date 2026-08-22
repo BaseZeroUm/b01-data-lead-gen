@@ -4,6 +4,8 @@ import logoAsset from "@/assets/logo.png.asset.json";
 import { getPost, formatDate } from "@/lib/blog-content";
 import { BlogCover } from "@/components/BlogCover";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import { EmailLink, InstagramLink } from "@/components/SocialLinks";
+
 
 export const Route = createFileRoute("/blog/$slug")({
   loader: ({ params }) => {
