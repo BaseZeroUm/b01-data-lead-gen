@@ -1,4 +1,4 @@
-type Tool = { name: string; d: string };
+type Tool = { name: string; d: string; fill?: "outline" | "solid" };
 
 // Marcas desenhadas em traço único (monocromático) para manter a página coerente.
 export const TOOLS: Tool[] = [
@@ -17,6 +17,7 @@ export const TOOLS: Tool[] = [
   {
     name: "Snowflake",
     d: "M12 1v22M2.5 6.5l19 11M2.5 17.5l19-11",
+    fill: "outline",
   },
   {
     name: "BigQuery",
@@ -28,7 +29,7 @@ export const TOOLS: Tool[] = [
   },
   {
     name: "Python",
-    d: "M11.9 1c-2.6 0-4.6.5-4.6 2.3v2.3h6.4v1H5.6C3.6 6.6 2 8 2 11.4c0 3.4 1.4 4.9 3.4 4.9h1.9v-2.6c0-2 1.6-3.6 3.6-3.6h4.4c1.7 0 3-1.4 3-3.1V3.3C18.3 1.6 16.3 1 13.7 1h-1.8Zm-2.5 1.4a.9.9 0 1 1 0 1.9.9.9 0 0 1 0-1.9ZM16.7 7.7v2.6c0 2-1.6 3.6-3.6 3.6H8.7c-1.7 0-3 1.4-3 3.1v3.7C5.7 22.4 7.7 23 10.3 23h1.8c2.6 0 4.6-.6 4.6-2.3v-2.3h-6.4v-1h8.1c2 0 3.6-1.4 3.6-4.8s-1.6-4.9-3.6-4.9h-1.7Zm-2.1 12a.9.9 0 1 1 0 1.9.9.9 0 0 1 0-1.9Z",
+    d: "M11.9 1c-2.6 0-4.6.5-4.6 2.3v2.3h6.4v1H5.6C3.6 6.6 2 8 2 11.4c0 3.4 1.4 4.9 3.4 4.9h1.9v-2.6c0-2 1.6-3.6 3.6-3.6h4.4c1.7 0 3-3.1 3-3.1V3.3C18.3 1.6 16.3 1 13.7 1h-1.8Zm-2.5 1.4a.9.9 0 1 1 0 1.9.9.9 0 0 1 0-1.9ZM16.7 7.7v2.6c0 2-1.6 3.6-3.6 3.6H8.7c-1.7 0-3 1.4-3 3.1v3.7C5.7 22.4 7.7 23 10.3 23h1.8c2.6 0 4.6-.6 4.6-2.3v-2.3h-6.4v-1h8.1c2 0 3.6-1.4 3.6-4.8s-1.6-4.9-3.6-4.9h-1.7Zm-2.1 12a.9.9 0 1 1 0 1.9.9.9 0 0 1 0-1.9Z",
   },
   {
     name: "Looker Studio",
@@ -42,30 +43,65 @@ export const TOOLS: Tool[] = [
     name: "Google Sheets",
     d: "M11.318 12.545H7.91v-1.909h3.41v1.91zM14.728 0v6h6l-6-6zm1.363 10.636h-3.41v1.91h3.41v-1.91zm0 3.273h-3.41v1.91h3.41v-1.91zM20.727 6.5v15.864c0 .904-.732 1.636-1.636 1.636H4.909a1.636 1.636 0 0 1-1.636-1.636V1.636C3.273.732 4.005 0 4.909 0h9.318v6.5h6.5zm-3.273 2.773H6.545v7.909h10.91v-7.91zm-6.136 4.636H7.91v1.91h3.41v-1.91z",
   },
+  {
+    name: "AWS",
+    d: "M8.55 14.55c.2.1.3.3.3.55 0 .25-.1.45-.3.55-.2.1-.5.15-.9.15H5.2c-.2 0-.35-.05-.45-.15-.1-.1-.15-.25-.15-.4v-2.6c0-.15.05-.3.15-.4.1-.1.25-.15.45-.15h2.7c.4 0 .7.05.9.15.2.1.3.3.3.55 0 .25-.1.45-.3.55-.2.1-.5.15-.9.15H6.35v.55h1.3c.4 0 .7.05.9.15zm2.6-2.5c.1-.1.25-.15.45-.15h.65c.2 0 .35.05.45.15.1.1.15.25.15.4v2.6c0 .15-.05.3-.15.4-.1.1-.25.15-.45.15h-.65c-.2 0-.35-.05-.45-.15-.1-.1-.15-.25-.15-.4v-2.6c0-.15.05-.3.15-.4zm6.6 0c.1-.1.25-.15.45-.15h.65c.2 0 .35.05.45.15.1.1.15.25.15.4v2.6c0 .15-.05.3-.15.4-.1.1-.25.15-.45.15h-.65c-.2 0-.35-.05-.45-.15-.1-.1-.15-.25-.15-.4v-2.6c0-.15.05-.3.15-.4zm-4.6 0c.1-.1.25-.15.45-.15h2.7c.2 0 .35.05.45.15.1.1.15.25.15.4 0 .15-.05.3-.15.4-.1.1-.25.15-.45.15h-2v.55h1.3c.2 0 .35.05.45.15.1.1.15.25.15.4 0 .15-.05.3-.15.4-.1.1-.25.15-.45.15h-1.3v.55h2c.2 0 .35.05.45.15.1.1.15.25.15.4 0 .15-.05.3-.15.4-.1.1-.25.15-.45.15h-2.7c-.2 0-.35-.05-.45-.15-.1-.1-.15-.25-.15-.4v-2.6c0-.15.05-.3.15-.4zM6.3 21c-1.8-.8-3.3-2.2-4.3-4.1-.6-1.1-.9-2.2-1-3.3h2c.1.9.4 1.7.8 2.5.6 1.2 1.6 2.2 2.8 2.9l-.3 2zm11.4 0l-.3-2c1.2-.7 2.2-1.7 2.8-2.9.4-.8.7-1.6.8-2.5h2c-.1 1.1-.4 2.2-1 3.3-1 1.9-2.5 3.3-4.3 4.1zm-5.7 1.5c-2.3 0-4.4-.9-6-2.3l1.4-1.4c1.2 1.1 2.8 1.7 4.6 1.7s3.4-.6 4.6-1.7l1.4 1.4c-1.6 1.4-3.7 2.3-6 2.3z",
+  },
+  {
+    name: "Azure",
+    d: "M4.4 15.7L12 3.4l1.6 2.7H8.2L14 16h4.3l-3.7 4.6H2.2l2.2-4.9zM12 16.4l4.2-6.6-2.2-3.6L6.8 18.5h5.2z",
+  },
+  {
+    name: "Google Cloud",
+    d: "M12 2a6 6 0 0 0-6 6v.2c-.7.1-1.3.5-1.8 1L2 12l2.2 2.8c.5.5 1.1.9 1.8 1v.2a6 6 0 0 0 6 6 6 6 0 0 0 6-6h-2.4a3.6 3.6 0 1 1-3.6-3.6v.2c.7-.1 1.3-.5 1.8-1l2.2-2.8-2.2-2.8c-.5-.5-1.1-.9-1.8-1V8a6 6 0 0 0 6 6h2.4a6 6 0 0 0-6-6v-.2c.7-.1 1.3-.5 1.8-1l2.2-2.8-2.2-2.8c-.5-.5-1.1-.9-1.8-1V4a6 6 0 0 0-6-6zm0 7.4a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2z",
+  },
+  {
+    name: "Tableau",
+    d: "M10 2h4v4h-4V2zm0 6h4v6h-4V8zm-6 0h4v4H4V8zm12 0h4v4h-4V8zm-6 8h4v6h-4v-6z",
+  },
+  {
+    name: "Metabase",
+    d: "M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z",
+  },
+  {
+    name: "Google Analytics",
+    d: "M20 2h-4v18h4V2zm-6 6h-4v12h4V8zm-6 6H2v6h6v-6z",
+  },
+  {
+    name: "MongoDB",
+    d: "M12 2c-2 3-3 5-3 8 0 4 1 6 3 8 2-2 3-4 3-8 0-3-1-5-3-8zm0 3c1 1 1 2 1 5 0 2-.5 4-1 5v-8z",
+  },
+  {
+    name: "MySQL",
+    d: "M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z",
+  },
 ];
 
 export function ToolLogos() {
   return (
-    <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
-      {TOOLS.map((tool) => (
-        <li
-          key={tool.name}
-          className="flex flex-col items-center gap-3 rounded-[24px] border border-white/15 bg-white/[0.04] px-4 py-7 text-center transition hover:border-brand-blue/60"
-        >
-          <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            className="size-9 text-brand-blue"
-            fill={tool.name === "Snowflake" ? "none" : "currentColor"}
-            stroke={tool.name === "Snowflake" ? "currentColor" : undefined}
-            strokeWidth={tool.name === "Snowflake" ? 1.8 : undefined}
-            strokeLinecap="round"
+    <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+      {TOOLS.map((tool) => {
+        const isOutline = tool.fill === "outline";
+        return (
+          <li
+            key={tool.name}
+            className="flex flex-col items-center gap-3 rounded-[24px] border border-white/15 bg-white/[0.04] px-3 py-6 text-center transition hover:border-brand-blue/60"
           >
-            <path d={tool.d} fillRule="evenodd" clipRule="evenodd" />
-          </svg>
-          <span className="text-sm font-bold text-on-dark">{tool.name}</span>
-        </li>
-      ))}
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              className="size-9 text-brand-blue"
+              fill={isOutline ? "none" : "currentColor"}
+              stroke={isOutline ? "currentColor" : undefined}
+              strokeWidth={isOutline ? 1.8 : undefined}
+              strokeLinecap="round"
+            >
+              <path d={tool.d} fillRule="evenodd" clipRule="evenodd" />
+            </svg>
+            <span className="text-sm font-bold text-on-dark">{tool.name}</span>
+          </li>
+        );
+      })}
     </ul>
   );
 }
