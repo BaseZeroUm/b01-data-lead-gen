@@ -51,6 +51,17 @@ function Landing() {
   const year = new Date().getFullYear();
   const [activeTab, setActiveTab] = useState(PORTAL_TABS[0]!.id);
   const currentTab = PORTAL_TABS.find((t) => t.id === activeTab) ?? PORTAL_TABS[0]!;
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+
+  const toggleSound = () => {
+    const el = videoRef.current;
+    if (!el) return;
+    const next = !muted;
+    el.muted = next;
+    setMuted(next);
+    if (!next) void el.play().catch(() => {});
+  };
 
   return (
     <div className="min-h-screen bg-paper font-sans">
