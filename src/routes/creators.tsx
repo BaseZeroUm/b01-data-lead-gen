@@ -83,9 +83,6 @@ function CreatorsLanding() {
             alt="Creators 01"
             className="h-5 w-auto [filter:invert(1)_hue-rotate(180deg)] sm:h-6"
           />
-          <a href="#formulario" className="btn-outline-blue">
-            Quero entrar
-          </a>
         </div>
       </header>
 
