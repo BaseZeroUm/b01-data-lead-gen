@@ -268,15 +268,15 @@ function Landing() {
       {/* Sobre */}
       <section className="section-dark glow-bottom border-t border-white/10">
         <div className="liquid-bg" aria-hidden="true"><span /><span /></div>
-        <div className="section-padding relative z-[1] mx-auto max-w-6xl px-5">
+        <div className="section-padding relative z-[1] mx-auto max-w-6xl px-5 text-center">
           <h2 className="text-3xl sm:text-5xl">
             <span className="font-light text-on-dark-muted">Quem </span>
             <span className="font-extrabold text-on-dark">criou tudo isso?</span>
           </h2>
 
-          <div className="mt-12 grid gap-12 sm:mt-16 md:grid-cols-2">
+          <div className="mt-12 grid justify-center gap-12 sm:mt-16 md:grid-cols-2 md:gap-16">
             {/* Felipe */}
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col items-center gap-8 text-center">
               <div className="card-dark w-full max-w-[320px] overflow-hidden rounded-[24px] [aspect-ratio:4/5]">
                 <img
                   src={felipePortrait}
@@ -287,7 +287,7 @@ function Landing() {
               </div>
               <div>
                 <p className="text-2xl font-extrabold text-on-dark">Felipe Garcez</p>
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-6 flex flex-wrap justify-center gap-2">
                   {ABOUT_PILLS.map((pill) => (
                     <span key={pill} className="pill-mint">
                       {pill}
@@ -302,7 +302,7 @@ function Landing() {
             </div>
 
             {/* Danilo */}
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col items-center gap-8 text-center">
               <div className="card-dark w-full max-w-[320px] overflow-hidden rounded-[24px] [aspect-ratio:4/5]">
                 <img
                   src={daniloPortrait.url}
@@ -313,7 +313,7 @@ function Landing() {
               </div>
               <div>
                 <p className="text-2xl font-extrabold text-on-dark">Danilo Crivellaro</p>
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-6 flex flex-wrap justify-center gap-2">
                   <span className="pill-mint">Especialista em dados</span>
                   <span className="pill-mint">Advogado</span>
                 </div>
