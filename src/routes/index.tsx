@@ -93,8 +93,9 @@ function Landing() {
             </div>
 
             <div className="relative">
-              <div className="overflow-hidden rounded-3xl border border-white/15 shadow-[var(--shadow-portal)] [aspect-ratio:16/9]">
+              <div className="relative overflow-hidden rounded-3xl border border-white/15 shadow-[var(--shadow-portal)] [aspect-ratio:16/9]">
                 <video
+                  ref={videoRef}
                   src={heroVideo.url}
                   poster={heroPoster.url}
                   autoPlay
@@ -105,6 +106,14 @@ function Landing() {
                   className="h-full w-full object-cover"
                   aria-label="Demonstração do Portal B01 com dados de receita"
                 />
+                <button
+                  type="button"
+                  onClick={toggleSound}
+                  aria-label={muted ? "Ativar som do vídeo" : "Desativar som do vídeo"}
+                  className="absolute bottom-4 right-4 rounded-full border border-white/25 bg-black/50 px-4 py-2 text-sm font-bold text-white backdrop-blur transition hover:border-[var(--brand-blue)] hover:text-[var(--brand-blue)]"
+                >
+                  {muted ? "🔇 Ativar som" : "🔊 Som ligado"}
+                </button>
               </div>
             </div>
           </div>
