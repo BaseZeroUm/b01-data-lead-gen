@@ -302,7 +302,7 @@ function Landing() {
             </div>
 
             {/* Danilo */}
-            <div className="flex flex-col gap-8">
+            <div className="flex flex-col items-center gap-8 text-center">
               <div className="card-dark w-full max-w-[320px] overflow-hidden rounded-[24px] [aspect-ratio:4/5]">
                 <img
                   src={daniloPortrait.url}
@@ -313,7 +313,7 @@ function Landing() {
               </div>
               <div>
                 <p className="text-2xl font-extrabold text-on-dark">Danilo Crivellaro</p>
-                <div className="mt-6 flex flex-wrap gap-2">
+                <div className="mt-6 flex flex-wrap justify-center gap-2">
                   <span className="pill-mint">Especialista em dados</span>
                   <span className="pill-mint">Advogado</span>
                 </div>
