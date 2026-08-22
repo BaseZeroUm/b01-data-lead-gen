@@ -71,23 +71,46 @@ function Landing() {
           src={block65.url}
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute -right-10 top-16 w-56 opacity-20 sm:w-80"
+          className="pointer-events-none absolute -right-10 top-16 w-56 opacity-10 sm:w-80"
         />
         <div className="section-pad relative z-[1] mx-auto max-w-6xl px-5">
-          <p className="text-xs font-medium uppercase tracking-[0.18em] text-on-dark-label">
-            B01 → consultoria de dados para PME
-          </p>
-          <h1 className="mt-6 max-w-3xl text-5xl leading-[1.05] tracking-tight sm:text-7xl">
-            <span className="font-light text-on-dark-muted">Toda decisão </span>
-            <span className="font-extrabold text-on-dark">precisa de uma base.</span>
-          </h1>
-          <p className="mt-10 max-w-2xl text-lg text-on-dark-muted sm:mt-12">
-            Unimos business intelligence, engenharia de dados e ciência de dados numa
-            consultoria feita para o tamanho da sua PME.
-          </p>
-          <a href="#formulario" className="btn-brand mt-12 sm:mt-16">
-            Quero sair do escuro ↗
-          </a>
+          <div className="grid items-center gap-12 md:grid-cols-2 md:gap-10">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.18em] text-on-dark-label">
+                B01 → consultoria de dados para PME
+              </p>
+              <h1 className="mt-6 max-w-3xl text-5xl leading-[1.05] tracking-tight sm:text-6xl">
+                <span className="font-light text-on-dark-muted">Toda decisão </span>
+                <span className="font-extrabold text-on-dark">precisa de uma base.</span>
+              </h1>
+              <p className="mt-10 max-w-2xl text-lg text-on-dark-muted sm:mt-12">
+                Unimos business intelligence, engenharia de dados e ciência de dados numa
+                consultoria feita para o tamanho da sua PME.
+              </p>
+              <a href="#formulario" className="btn-brand mt-12 sm:mt-16">
+                Quero sair do escuro ↗
+              </a>
+            </div>
+
+            <div className="relative">
+              <div className="overflow-hidden rounded-3xl border border-white/15 shadow-[var(--shadow-portal)] [aspect-ratio:16/9]">
+                <video
+                  src={heroVideo.url}
+                  poster={heroPoster.url}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  preload="auto"
+                  className="h-full w-full object-cover"
+                  aria-label="Demonstração do Portal B01 com dados de receita"
+                />
+              </div>
+              <p className="mt-4 text-center text-sm text-on-dark-label">
+                Assim funciona o Portal B01 em tempo real.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
