@@ -77,31 +77,69 @@ export const TOOLS: Tool[] = [
   },
 ];
 
-export function ToolLogos() {
+const byName = (name: string): Tool =>
+  TOOLS.find((t) => t.name === name) ?? { name, d: "" };
+
+const GROUPS: { title: string; caption: string; tools: Tool[] }[] = [
+  {
+    title: "Visualização e análise",
+    caption: "Painéis e relatórios que a liderança usa no dia a dia.",
+    tools: ["Power BI", "Looker Studio", "Tableau", "Metabase", "Excel", "Google Sheets"].map(byName),
+  },
+  {
+    title: "Engenharia de dados",
+    caption: "Coleta, tratamento e orquestração da base que alimenta tudo.",
+    tools: ["Databricks", "Airflow", "Python", "SQL", "Snowflake", "BigQuery"].map(byName),
+  },
+  {
+    title: "Nuvem, bases e medição",
+    caption: "Onde os dados moram e de onde eles vêm.",
+    tools: ["AWS", "Azure", "Google Cloud", "MySQL", "MongoDB", "Google Analytics"].map(byName),
+  },
+];
+
+
+function ToolIcon({ tool }: { tool: Tool }) {
+  const isOutline = tool.fill === "outline";
   return (
-    <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
-      {TOOLS.map((tool) => {
-        const isOutline = tool.fill === "outline";
-        return (
-          <li
-            key={tool.name}
-            className="flex flex-col items-center gap-3 rounded-[24px] border border-white/15 bg-white/[0.04] px-3 py-6 text-center transition hover:border-brand-blue/60"
-          >
-            <svg
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              className="size-9 text-brand-blue"
-              fill={isOutline ? "none" : "currentColor"}
-              stroke={isOutline ? "currentColor" : undefined}
-              strokeWidth={isOutline ? 1.8 : undefined}
-              strokeLinecap="round"
-            >
-              <path d={tool.d} fillRule="evenodd" clipRule="evenodd" />
-            </svg>
-            <span className="text-sm font-bold text-on-dark">{tool.name}</span>
-          </li>
-        );
-      })}
-    </ul>
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="size-7 shrink-0 text-brand-blue"
+      fill={isOutline ? "none" : "currentColor"}
+      stroke={isOutline ? "currentColor" : undefined}
+      strokeWidth={isOutline ? 1.8 : undefined}
+      strokeLinecap="round"
+    >
+      <path d={tool.d} fillRule="evenodd" clipRule="evenodd" />
+    </svg>
   );
 }
+
+export function ToolLogos() {
+  return (
+    <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+      {GROUPS.map((group) => (
+        <section
+          key={group.title}
+          className="rounded-[32px] border border-white/15 bg-white/[0.04] p-7"
+        >
+          <h3 className="text-lg font-extrabold text-on-dark">{group.title}</h3>
+          <p className="mt-2 text-sm text-on-dark-label">{group.caption}</p>
+          <ul className="mt-6 grid grid-cols-2 gap-3">
+            {group.tools.map((tool) => (
+              <li
+                key={tool.name}
+                className="flex items-center gap-3 rounded-[18px] border border-white/10 bg-white/[0.03] px-3 py-3 transition hover:border-brand-blue/60"
+              >
+                <ToolIcon tool={tool} />
+                <span className="text-sm font-bold text-on-dark">{tool.name}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </div>
+  );
+}
+
