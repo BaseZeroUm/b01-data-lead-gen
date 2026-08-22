@@ -4,6 +4,7 @@ import logoAsset from "@/assets/logo.png.asset.json";
 import block65 from "@/assets/Group_65.png.asset.json";
 import portalVisaoGeral from "@/assets/portal-visao-geral.png.asset.json";
 import { LeadForm } from "@/components/LeadForm";
+import { ToolLogos } from "@/components/ToolLogos";
 
 const URL = "https://basezeroum.com.br/consultoria-power-bi";
 const TITLE = "Consultoria Power BI para PME | B01 BaseZeroUm";
@@ -139,8 +140,8 @@ function PowerBiPage() {
           </h1>
           <p className="mt-10 max-w-2xl text-lg text-on-dark-muted sm:mt-12">
             Painéis, indicadores e uma base de dados organizada por trás. A B01 implanta o
-            Power BI no tamanho da sua empresa, com foco nas decisões que você toma toda
-            semana.
+            Power BI no tamanho da sua empresa e trabalha com as ferramentas que a sua
+            operação já usa: Excel, Databricks, SQL, Python e as nuvens de dados.
           </p>
           <a href="#formulario" className="btn-brand mt-12 sm:mt-16">
             Falar sobre o meu Power BI ↗
@@ -176,6 +177,28 @@ function PowerBiPage() {
               <span className="font-bold text-brand-blue">↗</span> Faturamento que muda de
               valor conforme a planilha que você abre.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Ferramentas */}
+      <section className="section-dark glow-bottom border-t border-white/10">
+        <div className="liquid-bg" aria-hidden="true">
+          <span />
+          <span />
+        </div>
+        <div className="section-pad relative z-[1] mx-auto max-w-6xl px-5">
+          <span className="pill-mint">Ferramentas</span>
+          <h2 className="mt-8 text-3xl leading-tight sm:text-5xl">
+            <span className="font-light text-on-dark-muted">Power BI é o começo, </span>
+            <span className="font-extrabold text-on-dark">não o limite.</span>
+          </h2>
+          <p className="mt-8 max-w-2xl text-lg text-on-dark-muted">
+            Escolhemos a ferramenta a partir do seu cenário: às vezes o Excel resolve, às
+            vezes o volume de dados pede Databricks e um banco de verdade por trás do painel.
+          </p>
+          <div className="mt-14">
+            <ToolLogos />
           </div>
         </div>
       </section>
