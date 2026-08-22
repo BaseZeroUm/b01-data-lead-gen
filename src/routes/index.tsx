@@ -357,6 +357,9 @@ function Landing() {
             <p className="mt-3 text-sm text-on-dark-label">Decide Beyond</p>
           </div>
           <div className="text-sm text-on-dark-muted">
+            <Link to="/blog" className="mr-4 text-brand-blue">
+              Blog
+            </Link>
             <a href="mailto:felipe.garcez@basezeroum.com.br" className="text-brand-blue">
               felipe.garcez@basezeroum.com.br
             </a>
