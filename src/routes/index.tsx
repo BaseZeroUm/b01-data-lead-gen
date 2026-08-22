@@ -106,9 +106,6 @@ function Landing() {
                   aria-label="Demonstração do Portal B01 com dados de receita"
                 />
               </div>
-              <p className="mt-4 text-center text-sm text-on-dark-label">
-                Assim funciona o Portal B01 em tempo real.
-              </p>
             </div>
           </div>
         </div>
