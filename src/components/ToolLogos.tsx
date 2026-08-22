@@ -109,17 +109,17 @@ const GROUPS: { title: string; caption: string; tools: Tool[] }[] = [
   {
     title: "Engenharia de dados",
     caption: "Coleta, tratamento e orquestração da base que alimenta tudo.",
-    tools: ["Databricks", "Airflow", "Snowflake", "BigQuery", "AWS", "Azure"].map(byName),
+    tools: ["Databricks", "Airflow", "Snowflake", "BigQuery", "SQL", "Python"].map(byName),
   },
   {
     title: "Ciência de dados e IA",
     caption: "Modelos, previsões e análises avançadas que vão além do relatório.",
-    tools: ["Python", "SQL", "Jupyter", "Scikit-learn", "TensorFlow", "R"].map(byName),
+    tools: ["Jupyter", "Scikit-learn", "TensorFlow", "R"].map(byName),
   },
   {
     title: "Nuvem, bases e medição",
     caption: "Onde os dados moram e de onde eles vêm.",
-    tools: ["Google Cloud", "MySQL", "MongoDB", "Google Analytics", "Databricks", "BigQuery"].map(byName),
+    tools: ["AWS", "Azure", "Google Cloud", "MySQL", "PostgreSQL", "MongoDB"].map(byName),
   },
 ];
 
