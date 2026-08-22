@@ -74,6 +74,33 @@ const BENEFITS = [
   },
 ];
 
+const STEPS = [
+  {
+    number: 1,
+    area: "Business Intelligence",
+    pill: "BI",
+    icon: iconBI.url,
+    body: "Você aprende a ler o negócio pelos números, montando painéis e indicadores que mostram o que está acontecendo agora.",
+    project: "Um dashboard completo de indicadores de um negócio real",
+  },
+  {
+    number: 2,
+    area: "Engenharia de Dados",
+    pill: "Engenharia",
+    icon: iconEng.url,
+    body: "Você organiza e conecta os dados, construindo a base que sustenta qualquer análise daqui pra frente.",
+    project: "Um pipeline de dados ponta a ponta",
+  },
+  {
+    number: 3,
+    area: "Ciência de Dados",
+    pill: "Ciência",
+    icon: iconSci.url,
+    body: "Você constrói modelos que ajudam a prever o que vem a seguir, a partir do que foi organizado na etapa anterior.",
+    project: "Um modelo preditivo aplicado a um problema real",
+  },
+];
+
 function CreatorsLanding() {
   const year = new Date().getFullYear();
 
