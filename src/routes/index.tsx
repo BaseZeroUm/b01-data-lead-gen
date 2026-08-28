@@ -69,6 +69,9 @@ function Landing() {
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <img src={logoAsset.url} alt="B01 BaseZeroUm" className="h-8 w-auto" />
           <nav className="flex items-center gap-4">
+            <Link to="/produtos" className="text-sm font-bold text-on-dark-muted hover:text-brand-blue">
+              Produtos
+            </Link>
             <Link to="/blog" className="text-sm font-bold text-on-dark-muted hover:text-brand-blue">
               Blog
             </Link>
