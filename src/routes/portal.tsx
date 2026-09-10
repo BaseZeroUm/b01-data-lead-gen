@@ -3,7 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 
 import logoAsset from "@/assets/logo.png.asset.json";
 import { EmailLink, InstagramLink } from "@/components/SocialLinks";
-
+import { supabase } from "@/integrations/supabase/client";
 
 const TITLE = "Portal do cliente | B01 BaseZeroUm";
 const DESCRIPTION =
@@ -30,19 +30,71 @@ function PortalLogin() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email.trim());
+  const cleanEmail = email.trim();
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(cleanEmail);
   const valid = emailOk && password.length >= 6;
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!valid || loading) return;
+
     setLoading(true);
     setError(null);
-    await new Promise((r) => setTimeout(r, 700));
-    setLoading(false);
-    setError(
-      "Ainda não encontramos esse acesso. O portal está em implantação para os primeiros clientes.",
-    );
+
+    try {
+      console.log("[PortalLogin] Tentando autenticar:", cleanEmail);
+      const { data, error: authError } = await supabase.auth.signInWithPassword({
+        email: cleanEmail,
+        password: password,
+      });
+
+      if (authError) {
+        console.error("[PortalLogin] Erro ao autenticar no Supabase:", authError);
+        if (authError.message.toLowerCase().includes("invalid login credentials")) {
+          setError("E-mail ou senha incorretos. Verifique seus dados e tente novamente.");
+        } else {
+          setError(authError.message || "Erro ao realizar login.");
+        }
+        setLoading(false);
+        return;
+      }
+
+      const user = data?.user;
+      if (!user) {
+        console.error("[PortalLogin] Usuário não encontrado no retorno da autenticação:", data);
+        setError("Não foi possível identificar o usuário após o login.");
+        setLoading(false);
+        return;
+      }
+
+      console.log("[PortalLogin] Autenticação bem-sucedida para o usuário:", user.id);
+
+      const { data: profile, error: profileError } = await (supabase.from("profiles" as any) as any)
+        .select("dashboard_url")
+        .eq("id", user.id)
+        .maybeSingle();
+
+      if (profileError) {
+        console.error("[PortalLogin] Erro ao buscar profile:", profileError);
+        setError("Erro ao carregar os dados de acesso da sua conta. Contate o suporte.");
+        setLoading(false);
+        return;
+      }
+
+      if (!profile?.dashboard_url) {
+        console.warn("[PortalLogin] dashboard_url não encontrada para o usuário:", user.id, profile);
+        setError("Nenhum painel configurado para sua conta no momento. Contate o suporte.");
+        setLoading(false);
+        return;
+      }
+
+      console.log("[PortalLogin] Redirecionando para:", profile.dashboard_url);
+      window.location.href = profile.dashboard_url;
+    } catch (err: any) {
+      console.error("[PortalLogin] Exceção inesperada no login:", err);
+      setError(err?.message || "Ocorreu um erro inesperado ao tentar entrar.");
+      setLoading(false);
+    }
   }
 
   return (
@@ -131,4 +183,3 @@ function PortalLogin() {
     </div>
   );
 }
-
